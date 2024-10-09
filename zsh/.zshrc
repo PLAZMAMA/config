@@ -1,6 +1,3 @@
-
-
-
 #########
 # Aliases
 
@@ -31,9 +28,9 @@ alias src='$HOME/src'
 
 #################
 # Auto Completion
-#autoload -U compinit
-#compinit
-#_comp_options+=(globdots) # Adds hidden files completion  
+autoload -U compinit
+compinit -u
+_comp_options+=(globdots) # Adds hidden files completion  
 
 #################
 # Directory Stack
