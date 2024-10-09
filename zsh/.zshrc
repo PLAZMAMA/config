@@ -22,8 +22,8 @@ alias vim='nvim'
 alias vi='nvim'
 
 # Folders
-alias conf='$XDG_CONFIG_HOME'
-alias src='$HOME/src'
+alias conf='cd $XDG_CONFIG_HOME'
+alias src='cd $HOME/src'
 
 
 #################
