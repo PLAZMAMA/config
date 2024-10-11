@@ -1,3 +1,6 @@
+ TODO: ignore everything besides zsh, nvim, and wezterm folders
+ TODO: additionally, keep zsh and nvim specific ignores
+
 cache/
 local/
 nvim/lazy-lock.json
