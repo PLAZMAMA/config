@@ -14,7 +14,7 @@ config.keys = {
     { key = '3', mods = 'ALT', action = act.ActivateTab(2) },
     { key = '4', mods = 'ALT', action = act.ActivateTab(3) },
     { key = '5', mods = 'ALT', action = act.ActivateTab(4) },
-    { key = 'vs', mods = 'ALT', action = act.SplitHorizontal{ domain = 'CurrentPaneDomain' } },
+    { key = 'v', mods = 'ALT', action = act.SplitHorizontal{ domain = 'CurrentPaneDomain' } },
     { key = '6', mods = 'ALT', action = act.ActivateTab(5) },
     { key = '7', mods = 'ALT', action = act.ActivateTab(6) },
     { key = '8', mods = 'ALT', action = act.ActivateTab(7) },
