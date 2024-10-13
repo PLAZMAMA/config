@@ -15,6 +15,8 @@ config.keys = {
    { key = '3', mods = 'ALT', action = act.ActivateTab(2) },
    { key = '4', mods = 'ALT', action = act.ActivateTab(3) },
    { key = 'v', mods = 'ALT', action = act.SplitHorizontal{ domain = 'CurrentPaneDomain' } },
+   { key = 'C', mods = 'CTRL|SHIFT', action = act.CopyTo('Clipboard') },
+   { key = 'V', mods = 'CTRL|SHIFT', action = act.PasteFrom('Clipboard') },
 }
 
 -- Returns the configuration to wezterm
