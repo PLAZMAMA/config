@@ -2,6 +2,7 @@ return {
     -- Favorite theme
     {
         "folke/tokyonight.nvim",
+        version = 'v4.8.x',
         lazy = false,
         priority = 1000,
         config = function()

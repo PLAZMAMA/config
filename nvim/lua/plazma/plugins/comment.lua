@@ -1,19 +1,20 @@
 return {
     'numToStr/Comment.nvim',
+    version = 'v0.8.x',
     opts = {},
     config = function ()
         require('Comment').setup({
             ---LHS of toggle mappings in NORMAL mode
             toggler = {
                 ---Line-comment toggle keymap
-                line = '<M-/><M-/>',
+                line = '<C-/><C-/>',
                 ---Block-comment toggle keymap
                 block = 'gbc',
             },
             ---LHS of operator-pending mappings in NORMAL and VISUAL mode
             opleader = {
                 ---Line-comment keymap
-                line = '<M-/>',
+                line = '<C-/>',
                 ---Block-comment keymap
                 block = 'gb',
             },
