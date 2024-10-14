@@ -14,7 +14,10 @@ return {
 
     local wk = require("which-key")
     wk.add({
-      ['<leader>mt'] = { name = '[M]atrix(codeium) [T]oggle', _ = 'which_key_ignore' },
+      {
+        mode = { 'n' },
+        {'<leader>mt', desc = '[M]atrix(codeium) [T]oggle'},
+      },
     })
   end,
 }
