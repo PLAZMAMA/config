@@ -14,7 +14,7 @@ return {
         keymap.set('n', '<C-e>', function() harpoon.ui:toggle_quick_menu(harpoon:list()) end)
         keymap.set('n', '<C-7>', function() harpoon:list():select(1) end)
         keymap.set('n', '<C-8>', function() harpoon:list():select(2) end)
-        keymap.set('n', '<C-9>', function() harpoon:list():select(1) end)
-        keymap.set('n', '<C-0>', function() harpoon:list():select(1) end)
+        keymap.set('n', '<C-9>', function() harpoon:list():select(3) end)
+        keymap.set('n', '<C-0>', function() harpoon:list():select(4) end)
     end,
 }
