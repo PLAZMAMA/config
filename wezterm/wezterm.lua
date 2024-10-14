@@ -14,9 +14,11 @@ config.keys = {
    { key = '2', mods = 'CTRL', action = act.ActivateTab(1) },
    { key = '3', mods = 'CTRL', action = act.ActivateTab(2) },
    { key = '4', mods = 'CTRL', action = act.ActivateTab(3) },
-   { key = 'v', mods = 'CTRL', action = act.SplitHorizontal{ domain = 'CurrentPaneDomain' } },
+   { key = 'v', mods = 'ALT', action = act.SplitHorizontal{ domain = 'CurrentPaneDomain' } },
    { key = 'C', mods = 'CTRL|SHIFT', action = act.CopyTo('Clipboard') },
    { key = 'V', mods = 'CTRL|SHIFT', action = act.PasteFrom('Clipboard') },
+
+   -- TODO: Put key passthrough code in a for loop
    { key = '7', mods = 'CTRL', action = wezterm.action.SendKey{key="7", mods="CTRL"} },
    { key = '8', mods = 'CTRL', action = wezterm.action.SendKey{key="8", mods="CTRL"} },
    { key = '9', mods = 'CTRL', action = wezterm.action.SendKey{key="9", mods="CTRL"} },
