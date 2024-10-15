@@ -20,6 +20,7 @@ local passthrough_key_binds = {
    { key = '9', mods = 'CTRL' },
    { key = '0', mods = 'CTRL' },
    { key = '/', mods = 'CTRL' },
+   { key = 'm', mods = 'CTRL'}
 }
 
 
