@@ -69,7 +69,7 @@ zstyle ':vcs_info:git*' stagedstr '+'
 # but can be slow on large repos
 zstyle ':vcs_info:*:*' check-for-changes true
 
-PROMPT='⎇ ${vcs_info_msg_0_} %2~%(?.%F{82}=>.%F{124}=>)%f '
+PROMPT='⎇ ${vcs_info_msg_0_} %~%(?.%F{82}=>.%F{124}=>)%f '
 
 ##########
 # Vim mode
