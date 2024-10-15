@@ -9,6 +9,20 @@ config.window_background_opacity = 0.8
 config.disable_default_key_bindings = false
 
 local act = wezterm.action
+
+----------------------------------
+-- Creating passthrough key binds
+
+-- Table for specifing which keybindings to passthrough
+local passthrough_key_binds = {
+   { key = '7', mods = 'CTRL' },
+   { key = '8', mods = 'CTRL' },
+   { key = '9', mods = 'CTRL' },
+   { key = '0', mods = 'CTRL' },
+   { key = '/', mods = 'CTRL' },
+}
+
+
 config.keys = {
    { key = '1', mods = 'CTRL', action = act.ActivateTab(0) },
    { key = '2', mods = 'CTRL', action = act.ActivateTab(1) },
@@ -17,14 +31,12 @@ config.keys = {
    { key = 'v', mods = 'ALT', action = act.SplitHorizontal{ domain = 'CurrentPaneDomain' } },
    { key = 'C', mods = 'CTRL|SHIFT', action = act.CopyTo('Clipboard') },
    { key = 'V', mods = 'CTRL|SHIFT', action = act.PasteFrom('Clipboard') },
-
-   -- TODO: Put key passthrough code in a for loop
-   { key = '7', mods = 'CTRL', action = wezterm.action.SendKey{key="7", mods="CTRL"} },
-   { key = '8', mods = 'CTRL', action = wezterm.action.SendKey{key="8", mods="CTRL"} },
-   { key = '9', mods = 'CTRL', action = wezterm.action.SendKey{key="9", mods="CTRL"} },
-   { key = '0', mods = 'CTRL', action = wezterm.action.SendKey{key="0", mods="CTRL"} },
-   { key = '/', mods = 'CTRL', action = wezterm.action.SendKey{key="/", mods="CTRL"} },
 }
+
+-- Creating complete keybindings table
+for indx, key_bind in pairs(passthrough_key_binds) do
+   table.insert(config.keys, { key = key_bind.key, mods = key_bind.mods, action = wezterm.action.SendKey{ key= key_bind.key, mods= key_bind.mods } })
+end
 
 -- Returns the configuration to wezterm
 return config
