@@ -11,7 +11,8 @@ alias gc='git commit'
 alias gd='git diff'
 alias gco='git checkout '
 alias gl='git log'
-alias glo='git log --pretty="online"'
+alias glo='git log --pretty="oneline"'
+alias gllo='git log --pretty="oneline" @{push}..'
 
 # Ls
 alias ls='ls --color=auto'
