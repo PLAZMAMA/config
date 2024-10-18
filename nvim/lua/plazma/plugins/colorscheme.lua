@@ -15,6 +15,7 @@ return {
                 },
                 on_colors = function(colors)
                     colors.fg_gutter = colors.blue0
+                    colors.comment = '#b04700'
                 end,
             }
             require("tokyonight").load()
