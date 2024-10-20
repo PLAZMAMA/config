@@ -25,12 +25,11 @@ return {
         vim.keymap.set('i', '<M-c>', function() return vim.fn['codeium#Clear']() end, { expr = true, silent = true })
         vim.keymap.set('n', '<leader>ct', function() vim.g.codeium_enabled = not vim.g.codeium_enabled end,
             { expr = true, silent = true })
-
         local wk = require("which-key")
         wk.add({
             {
                 mode = { 'n' },
-                { '<leader>ct', desc = '[C]odeium) [T]oggle' },
+                { '<leader>ct', desc = '[C]odeium [T]oggle' },
             },
         })
     end,
