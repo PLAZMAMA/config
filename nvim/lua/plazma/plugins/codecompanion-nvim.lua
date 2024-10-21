@@ -53,11 +53,12 @@ return {
                     return require('codecompanion.adapters').extend('ollama', {
                         schema = {
                             model = {
-                                default = 'codeqwen',
+                                default = 'qwen2.5-coder',
                             },
                         },
                         env = {
-                            url = 'http://192.168.1.30:8080', -- /v1',
+                            -- url = 'http://192.168.1.30:8080',
+                            url = 'http://localhost:8080',
                             api_key = 'OLLAMA_API_KEY',
                         },
                         headers = {
