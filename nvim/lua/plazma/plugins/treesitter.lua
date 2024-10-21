@@ -3,7 +3,7 @@ return {
     'nvim-treesitter/nvim-treesitter',
     build = ':TSUpdate',
     main = 'nvim-treesitter.configs',
-    version = '0.9.x',
+    version = '0.24.x',
     opts = {
         -- Add languages to be installed here that you want installed for treesitter
         ensure_installed = {
