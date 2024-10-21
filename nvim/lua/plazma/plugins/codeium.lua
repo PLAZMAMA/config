@@ -31,8 +31,8 @@ return {
         wk.add({
             {
                 mode = { 'n' },
-                { '<leader>cen', desc = '[C]odeium [EN]able' },
-                { '<leader>cdi', desc = '[C]odeium [DI]sable' },
+                { '<leader>ce', desc = '[C]odeium [E]nable' },
+                { '<leader>cd', desc = '[C]odeium [D]isable' },
             },
         })
     end,
