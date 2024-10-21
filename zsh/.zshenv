@@ -16,3 +16,8 @@ export SAVEHIST=10000                   # Maximum events in history file
 # Default editor
 export EDITOR="nvim"
 export VISUAL="nvim"
+
+# Cuda architecture and compiler config
+export CUDA_DOCKER_ARCH=6.1
+export PATH="/usr/local/cuda/bin:/opt/nvim/:$PATH"
+export LD_LIBRARY_PATH="/usr/local/cuda/lib64"
