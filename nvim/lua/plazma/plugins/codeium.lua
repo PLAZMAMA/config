@@ -23,9 +23,9 @@ return {
         vim.keymap.set('i', '<M-h>', function() return vim.fn['codeium#CycleCompletions'](-1) end,
             { expr = true, silent = true })
         vim.keymap.set('i', '<M-c>', function() return vim.fn['codeium#Clear']() end, { expr = true, silent = true })
-        vim.keymap.set('n', '<leader>cen', function() vim.g.codeium_enabled = true end,
+        vim.keymap.set('n', '<leader>ce', function() vim.g.codeium_enabled = true end,
             { expr = true, silent = true })
-        vim.keymap.set('n', '<leader>cdi', function() vim.g.codeium_enabled = false end,
+        vim.keymap.set('n', '<leader>cd', function() vim.g.codeium_enabled = false end,
             { expr = true, silent = true })
         local wk = require("which-key")
         wk.add({
