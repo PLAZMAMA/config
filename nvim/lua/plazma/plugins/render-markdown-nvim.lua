@@ -1,9 +1,7 @@
 return {
     -- Make sure to set this up properly if you have lazy=true
     'MeanderingProgrammer/render-markdown.nvim',
-    lazy = false,
-    opts = {
-        file_types = { 'markdown', 'Avante' },
-    },
-    ft = { 'markdown', 'Avante' },
+    lazy = true,
+    version = 'v7.4.0',
+    ft = { 'markdown', 'codecompanion' },
 }
