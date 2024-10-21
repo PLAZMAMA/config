@@ -77,7 +77,6 @@ return {
         vim.g.codecompanion_adapter = 'ollama'
 
         -- Set keybinding
-        --
         vim.api.nvim_set_keymap('n', '<C-c>', '<cmd>CodeCompanionActions<cr>', { noremap = true, silent = true })
         vim.api.nvim_set_keymap('v', '<C-c>', '<cmd>CodeCompanionActions<cr>', { noremap = true, silent = true })
         vim.api.nvim_set_keymap('n', '<leader>ct', '<cmd>CodeCompanionChat Toggle<cr>', { noremap = true, silent = true })
