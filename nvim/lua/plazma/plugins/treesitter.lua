@@ -2,7 +2,6 @@
 return {
     'nvim-treesitter/nvim-treesitter',
     build = ':TSUpdate',
-    main = 'nvim-treesitter.configs',
     version = '0.24.x',
     opts = {
         -- Add languages to be installed here that you want installed for treesitter
@@ -20,6 +19,8 @@ return {
             'vim',
             'bash',
             'gitcommit',
+            'markdown',
+            'markdown_inline',
         },
         -- Autoinstall languages that are not installed. Defaults to false (but you can change for yourself!)
         auto_install = true,
@@ -40,5 +41,9 @@ return {
                 node_decremental = '<M-space>',
             },
         },
-    }
+    },
+    config = function(_, opts)
+        require('nvim-treesitter.configs').setup(opts)
+        vim.treesitter.language.add('markdown', {filetype= 'vimwiki' })
+    end
 }
