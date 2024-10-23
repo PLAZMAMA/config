@@ -3,5 +3,5 @@ return {
     'MeanderingProgrammer/render-markdown.nvim',
     lazy = true,
     version = 'v7.x.x',
-    ft = { 'markdown', 'codecompanion' },
+    ft = { 'markdown', 'vimwiki', 'codecompanion' },
 }
