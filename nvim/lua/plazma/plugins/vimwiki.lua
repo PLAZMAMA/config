@@ -10,15 +10,16 @@ return {
         path = '~/Documents/plazma-wiki/',
         syntax = 'markdown',
         ext = '.md',
+        index = 'README',
       },
     }
     vim.g.vimwiki_ext2syntax = {
       ['.md'] = 'markdown',
     }
-    vim.filetype.add({
+    vim.filetype.add {
       extension = {
         wiki = 'markdown',
       },
-    })
+    }
   end,
 }
