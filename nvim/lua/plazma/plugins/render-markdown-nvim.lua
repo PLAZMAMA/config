@@ -4,4 +4,9 @@ return {
     lazy = true,
     version = 'v7.x.x',
     ft = { 'markdown', 'vimwiki', 'codecompanion' },
+    config = function()
+        require('render-markdown').setup({
+            render_modes = true,
+        })
+    end,
 }
