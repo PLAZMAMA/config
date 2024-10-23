@@ -7,7 +7,7 @@ return {
     vim.g.vimwiki_folding = ''
     vim.g.vimwiki_list = {
       {
-        path = '~/Documents/plazma-wiki/',
+        path = '~/Documents/plazmama.github.io/',
         syntax = 'markdown',
         ext = '.md',
         index = 'README',
