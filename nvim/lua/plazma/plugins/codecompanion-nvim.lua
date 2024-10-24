@@ -73,8 +73,42 @@ return {
     vim.api.nvim_set_keymap('v', '<leader>cc', '<cmd>CodeCompanion<cr>', { noremap = true, silent = true })
     vim.api.nvim_set_keymap('n', '<leader>cc', '<cmd>CodeCompanion<cr>', { noremap = true, silent = true })
 
-        -- Expand 'cc' into 'CodeCompanion' in the command line
-        vim.cmd([[cab cc CodeCompanion]])
-        
-    end,
+    -- Expand 'cc' into 'CodeCompanion' in the command line
+    vim.cmd [[cab cc CodeCompanion]]
+  end,
 }
+
+------------------------------------------------------------------------------
+-- Doesn't work yet
+-- prompt_library = {
+--   -- Custom promps/behaviors (ex. /{custom_behavior_name})
+--   ['Naming'] = {
+--     strategy = 'inline',
+--     description = 'Give betting naming for the provided code snippet.',
+--     opts = {
+--       -- index = 12,
+--       mapping = '<leader>mn',
+--       modes = { 'v' },
+--       slash_cmd = 'naming',
+--       auto_submit = true,
+--       user_prompt = false,
+--       stop_context_insertion = true,
+--       placement = 'replace',
+--     },
+--     prompts = {
+--       {
+--         role = 'user',
+--         content = function(context)
+--           local code = require('codecompanion.helpers.actions').get_code(context.start_line, context.end_line)
+--
+--           return 'Please provide better names for the following variables and functions:\n\n```' .. context.filetype .. '\n' .. code .. '\n```\n\n'
+--         end,
+--         opts = {
+--           contains_code = true,
+--         },
+--       },
+--     },
+--   },
+-- },
+--
+------------------------------------------------------------------------------
