@@ -48,14 +48,6 @@ return {
             },
           })
         end,
-        glhf = function()
-          return require('codecompanion.adapters').extend('openai_compatible', {
-            env_replaced = {
-              url = 'https://glhf.chat/api/openai',
-              api_key = 'GLHF_API_KEY',
-            },
-          })
-        end,
       },
     }
 
@@ -111,4 +103,12 @@ return {
 --   },
 -- },
 --
+-- glhf = function()
+--   return require('codecompanion.adapters').extend('openai_compatible', {
+--     env_replaced = {
+--       url = 'https://glhf.chat/api/openai',
+--       api_key = 'GLHF_API_KEY',
+--     },
+--   })
+-- end,
 ------------------------------------------------------------------------------
