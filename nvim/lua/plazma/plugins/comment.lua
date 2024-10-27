@@ -22,7 +22,7 @@ return {
       ---NOTE: If given `false` then the plugin won't create any mappings
       mappings = {
         ---Operator-pending mapping; Defaults Ex: `gcc` `gbc` `gc[count]{motion}` `gb[count]{motion}`
-        basic = false,
+        basic = true,
         ---Extra mapping; Defaults Ex: `gco`, `gcO`, `gcA`
         extra = false,
       },
