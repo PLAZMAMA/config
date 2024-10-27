@@ -9,20 +9,20 @@ return {
         ---Line-comment toggle keymap
         line = '<C-/><C-/>',
         ---Block-comment toggle keymap
-        block = '<C-/><C-/>',
+        block = 'gbc',
       },
       ---LHS of operator-pending mappings in NORMAL and VISUAL mode
       opleader = {
         ---Line-comment keymap
         line = '<C-/>',
         ---Block-comment keymap
-        block = '<C-/>',
+        block = 'gb',
       },
       ---Enable keybindings
       ---NOTE: If given `false` then the plugin won't create any mappings
       mappings = {
         ---Operator-pending mapping; Defaults Ex: `gcc` `gbc` `gc[count]{motion}` `gb[count]{motion}`
-        basic = true,
+        basic = false,
         ---Extra mapping; Defaults Ex: `gco`, `gcO`, `gcA`
         extra = false,
       },
