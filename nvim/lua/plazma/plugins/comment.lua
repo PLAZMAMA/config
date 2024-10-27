@@ -9,14 +9,14 @@ return {
         ---Line-comment toggle keymap
         line = '<C-/><C-/>',
         ---Block-comment toggle keymap
-        block = 'gbc',
+        block = '<C-/><C-/>',
       },
       ---LHS of operator-pending mappings in NORMAL and VISUAL mode
       opleader = {
         ---Line-comment keymap
         line = '<C-/>',
         ---Block-comment keymap
-        block = 'gb',
+        block = '<C-/>',
       },
       ---Enable keybindings
       ---NOTE: If given `false` then the plugin won't create any mappings
