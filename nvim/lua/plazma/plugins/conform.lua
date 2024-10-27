@@ -33,7 +33,7 @@ return {
     end,
     formatters_by_ft = {
       lua = { 'stylua' },
-      python = { 'black' },
+      -- python = { 'black' },
       -- You can use 'stop_after_first' to run the first available formatter from the list
       javascript = { 'prettierd' },
       html = { 'prettierd' },
