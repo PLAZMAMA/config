@@ -25,6 +25,7 @@ alias vi='nvim'
 # Folders
 alias conf='cd $XDG_CONFIG_HOME'
 alias src='cd $HOME/src'
+alias wiki='cd $HOME/Documents/plazmama.github.io/'
 
 # Brew
 alias brewup='brew update && brew upgrade && brew cleanup'
