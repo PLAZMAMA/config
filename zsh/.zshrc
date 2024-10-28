@@ -26,6 +26,9 @@ alias vi='nvim'
 alias conf='cd $XDG_CONFIG_HOME'
 alias src='cd $HOME/src'
 
+# Brew
+alias brewup='brew update && brew upgrade && brew cleanup'
+alias brew="arch --arm64 brew"
 
 #################
 # Auto Completion
