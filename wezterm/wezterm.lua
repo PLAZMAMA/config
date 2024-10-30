@@ -36,6 +36,7 @@ config.keys = {
    { key = 'v', mods = 'ALT', action = act.SplitHorizontal{ domain = 'CurrentPaneDomain' } },
    { key = 'C', mods = 'CTRL|SHIFT', action = act.CopyTo('Clipboard') },
    { key = 'V', mods = 'CTRL|SHIFT', action = act.PasteFrom('Clipboard') },
+	{ key = "f", mods = "ALT", action = wezterm.action.ToggleFullScreen },
 }
 
 -- Creating complete keybindings table
