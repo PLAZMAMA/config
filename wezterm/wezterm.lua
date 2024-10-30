@@ -8,6 +8,10 @@ config.color_scheme = 'Tokyo Night Moon'
 config.window_background_opacity = 0.8
 config.disable_default_key_bindings = false
 
+-- Add Wezterm windowed fullscreen mode on MacOS.
+-- Because it doesn't keep the wallpaper when going into normal fullscreen mode.
+config.native_macos_fullscreen_mode = false
+
 local act = wezterm.action
 
 ----------------------------------
