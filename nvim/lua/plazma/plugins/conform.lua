@@ -27,13 +27,14 @@ return {
         lsp_format_opt = 'fallback'
       end
       return {
-        timeout_ms = 500,
+        timeout_ms = 5000,
+        async = true,
         lsp_format = lsp_format_opt,
       }
     end,
     formatters_by_ft = {
       lua = { 'stylua' },
-      -- python = { 'black' },
+      python = { 'black' },
       -- You can use 'stop_after_first' to run the first available formatter from the list
       javascript = { 'prettierd' },
       html = { 'prettierd' },
