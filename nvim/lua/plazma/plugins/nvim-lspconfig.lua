@@ -17,65 +17,29 @@ return {
   },
   config = function()
     --  This function gets run when an LSP connects to a particular buffer.
-    local on_attach = function(_, bufnr)
-      -- NOTE: Remember that lua is a real programming language, and as such it is possible
-      -- to define small helper and utility functions so you don't have to repeat yourself
-      -- many times.
-      --
-      -- In this case, we create a function that lets us more easily define mappings specific
-      -- for LSP related items. It sets the mode, buffer and description for us each time.
-      local nmap = function(keys, func, desc)
-        if desc then
-          desc = 'LSP: ' .. desc
+
+    vim.api.nvim_create_autocmd('LspAttach', {
+      group = vim.api.nvim_create_augroup('lsp-attach', { clear = true }),
+      callback = function(event)
+        local map = function(keys, func, desc, mode)
+          mode = mode or 'n'
+          vim.keymap.set(mode, keys, func, { buffer = event.buf, desc = 'LSP: ' .. desc })
         end
 
-        vim.keymap.set('n', keys, func, { buffer = bufnr, desc = desc })
-      end
-
-      nmap('<F2>', vim.lsp.buf.rename, 'Rename')
-      nmap('<leader>ca', function()
-        vim.lsp.buf.code_action { context = { only = { 'quickfix', 'refactor', 'source' } } }
-      end, '[C]ode [A]ction')
-      local telescope_builtin = require 'telescope.builtin'
-      nmap('gd', telescope_builtin.lsp_definitions, '[G]oto [D]efinition')
-      nmap('gr', telescope_builtin.lsp_references, '[G]oto [R]eferences')
-      nmap('gI', telescope_builtin.lsp_implementations, '[G]oto [I]mplementation')
-      nmap('<leader>D', telescope_builtin.lsp_type_definitions, 'Type [D]efinition')
-      nmap('<leader>ds', telescope_builtin.lsp_document_symbols, '[D]ocument [S]ymbols')
-
-      -- See `:help K` for why to use this in the hober documentation keymap.
-      nmap('K', vim.lsp.buf.hover, 'Hover Documentation')
-      nmap('<C-k>', vim.lsp.buf.signature_help, 'Signature Documentation')
-
-      -- Lesser used LSP functionality
-      nmap('gD', vim.lsp.buf.declaration, '[G]oto [D]eclaration')
-
-      -- Create a command `:Format` local to the LSP buffer
-      vim.api.nvim_buf_create_user_command(bufnr, 'Format', function(_)
-        vim.lsp.buf.format()
-      end, { desc = 'Format current buffer with LSP' })
-    end
-
-    -- document existing key chains
-    local wk = require 'which-key'
-    wk.add {
-      {
-        { '<leader>c', desc = '[C]ode' },
-        { '<leader>d', desc = '[D]ocument' },
-        { '<leader>g', desc = '[G]it' },
-        { '<leader>h', desc = 'Git [H]unk' },
-        { '<leader>r', desc = '[R]ename' },
-        { '<leader>s', desc = '[S]earch' },
-        { '<leader>t', desc = '[T]oggle' },
-      },
-      -- register which-key VISUAL mode
-      -- required for visual <leader>hs (hunk stage) to work
-      {
-        mode = { 'v' },
-        { '<leader>', desc = 'VISUAL <leader>' },
-        { '<leader>h', desc = 'Git [H]unk' },
-      },
-    }
+        local tel_bltn = require 'telescope.builtin'
+        map('gd', tel_bltn.lsp_definitions, '[G]oto [D]efinition')
+        map('gr', tel_bltn.lsp_references, '[G]oto [R]eferences')
+        map('gI', tel_bltn.lsp_implementations, '[G]oto [I]mplementation')
+        map('<leader>D', tel_bltn.lsp_type_definitions, 'Type [D]efinition')
+        map('<leader>ds', tel_bltn.lsp_document_symbols, '[D]ocument [S]ymbols')
+        map('<leader>ws', tel_bltn.lsp_dynamic_workspace_symbols, '[W]orkspace [S]ymbols')
+        map('<leader>rn', vim.lsp.buf.rename, '[R]e[n]ame')
+        map('<leader>ca', vim.lsp.buf.code_action, '[C]ode [A]ction', { 'n', 'x' })
+        map('gD', vim.lsp.buf.declaration, '[G]oto [D]eclaration')
+        map('K', vim.lsp.buf.hover, 'Hover Documentation')
+        map('<C-k>', vim.lsp.buf.signature_help, 'Signature Documentation')
+      end,
+    })
 
     -- mason-lspconfig requires that these setup functions are called in this order
     -- before setting up the servers.
