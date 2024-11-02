@@ -24,7 +24,20 @@ config.colors = {
 -- Because it doesn't keep the wallpaper when going into normal fullscreen mode.
 config.native_macos_fullscreen_mode = false
 
+-- Keybinds
 local act = wezterm.action
+
+config.keys = {
+	{ key = "1", mods = "CTRL", action = act.ActivateTab(0) },
+	{ key = "2", mods = "CTRL", action = act.ActivateTab(1) },
+	{ key = "3", mods = "CTRL", action = act.ActivateTab(2) },
+	{ key = "4", mods = "CTRL", action = act.ActivateTab(3) },
+	{ key = "v", mods = "ALT", action = act.SplitHorizontal({ domain = "CurrentPaneDomain" }) },
+	{ key = "C", mods = "CTRL|SHIFT", action = act.CopyTo("Clipboard") },
+	{ key = "V", mods = "CTRL|SHIFT", action = act.PasteFrom("Clipboard") },
+	{ key = "f", mods = "ALT", action = wezterm.action.ToggleFullScreen },
+	{ key = "t", mods = "ALT", action = act.SpawnTab("CurrentPaneDomain") },
+}
 
 ----------------------------------
 -- Creating passthrough key binds
@@ -37,18 +50,6 @@ local passthrough_key_binds = {
 	{ key = "0", mods = "CTRL" },
 	{ key = "/", mods = "CTRL" },
 	{ key = "m", mods = "CTRL" },
-}
-
-config.keys = {
-	{ key = "1", mods = "CTRL", action = act.ActivateTab(0) },
-	{ key = "2", mods = "CTRL", action = act.ActivateTab(1) },
-	{ key = "3", mods = "CTRL", action = act.ActivateTab(2) },
-	{ key = "4", mods = "CTRL", action = act.ActivateTab(3) },
-	{ key = "v", mods = "ALT", action = act.SplitHorizontal({ domain = "CurrentPaneDomain" }) },
-	{ key = "C", mods = "CTRL|SHIFT", action = act.CopyTo("Clipboard") },
-	{ key = "V", mods = "CTRL|SHIFT", action = act.PasteFrom("Clipboard") },
-	{ key = "f", mods = "ALT", action = wezterm.action.ToggleFullScreen },
-	{ key = "t", mods = "ALT", action = act.SpawnTab("CurrentPaneDomain") },
 }
 
 -- Creating complete keybindings table
