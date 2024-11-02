@@ -11,14 +11,15 @@ config.disable_default_key_bindings = false
 config.hide_tab_bar_if_only_one_tab = true
 config.window_frame = {
 	active_titlebar_bg = "rgba(36, 40, 59, 0.8)",
-	inactive_titlebar_bg = "rgba(36, 40, 59, 0.8)",
+	inactive_titlebar_bg = "rgba(36, 40, 59, 0.)",
 }
 config.colors = {
 	tab_bar = {
 		active_tab = { bg_color = "rgba(132, 1, 67, 0.8)", fg_color = "white" },
-		inactive_tab = { bg_color = "rgba(36, 40, 59, 0.8)", fg_color = "white" },
+		inactive_tab = { bg_color = "rgba(36, 40, 59, 0.)", fg_color = "white" },
+		inactive_tab_hover = { bg_color = "rgba(132, 1, 67, 0.8)", fg_color = "white" },
 		inactive_tab_edge = "rgba(255, 255, 255, 0)",
-		new_tab = { bg_color = "rgba(36, 40, 59, 0.8)", fg_color = "white" },
+		new_tab = { bg_color = "rgba(36, 40, 59, 0.)", fg_color = "white" },
 		new_tab_hover = { bg_color = "rgba(132, 1, 67, 0.8)", fg_color = "white" },
 	},
 }
