@@ -4,9 +4,21 @@ local wezterm = require("wezterm")
 -- Holds the configuration.
 local config = wezterm.config_builder()
 
+-- Color scheme and apperance
 config.color_scheme = "Tokyo Night Moon"
 config.window_background_opacity = 0.8
 config.disable_default_key_bindings = false
+config.hide_tab_bar_if_only_one_tab = true
+config.window_frame = {
+	active_titlebar_bg = "rgba(36, 40, 59, 0.8)",
+	inactive_titlebar_bg = "rgba(36, 40, 59, 0.8)",
+}
+config.colors = {
+	tab_bar = {
+		active_tab = { bg_color = "rgba(132, 1, 67, 0.8)", fg_color = "white" },
+		inactive_tab = { bg_color = "rgba(36, 40, 59, 0.8)", fg_color = "white" },
+	},
+}
 
 -- Add Wezterm windowed fullscreen mode on MacOS.
 -- Because it doesn't keep the wallpaper when going into normal fullscreen mode.
