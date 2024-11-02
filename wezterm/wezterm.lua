@@ -36,7 +36,7 @@ config.keys = {
 	{ key = "2", mods = "CTRL", action = act.ActivateTab(1) },
 	{ key = "3", mods = "CTRL", action = act.ActivateTab(2) },
 	{ key = "4", mods = "CTRL", action = act.ActivateTab(3) },
-	{ key = "v", mods = "ALT", action = act.SplitHorizontal({ domain = "CurrentPaneDomain" }) },
+	{ key = "v", mods = "ALT", action = act.SplitHorizontal({ domain = "CurrentPaneDomain" }) }, -- Same as split vertically in Neovim.
 	{ key = "h", mods = "ALT", action = act.ActivatePaneDirection("Left") },
 	{ key = "l", mods = "ALT", action = act.ActivatePaneDirection("Right") },
 	{ key = "k", mods = "ALT", action = act.ActivatePaneDirection("Up") },
