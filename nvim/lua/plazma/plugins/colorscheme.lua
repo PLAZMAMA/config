@@ -18,10 +18,10 @@ return {
           colors.comment = '#b04700'
         end,
         on_highlights = function(hl, colors)
-          hl.LspReferenceText = { bg = '', underline = true }
-          hl.LspReferenceRead = { bg = '', underline = true }
-          hl.LspReferenceWrite = { bg = '', underline = true }
-          hl.TreesitterContext = { bg = '' }
+          hl.LspReferenceText = { bg = colors.none, underline = true }
+          hl.LspReferenceRead = { bg = colors.none, underline = true }
+          hl.LspReferenceWrite = { bg = colors.none, underline = true }
+          hl.TreesitterContext = { bg = colors.none }
           hl['@constructor.tsx'] = { link = '@tag.tsx' } -- Solution to JSX problem found in GitHub discussions, if I ever use it, cool!
         end,
       }
