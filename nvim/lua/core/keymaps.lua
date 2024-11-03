@@ -1,4 +1,4 @@
-require("plazma.core.term_toggle")
+require("core.term_toggle")
 
 -- Set <space> as the leader key
 -- See `:help mapleader`

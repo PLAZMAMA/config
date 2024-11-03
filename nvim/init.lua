@@ -1,2 +1,2 @@
-require('plazma.core')
-require('plazma.lazy')
+require 'core'
+require '.lazy'

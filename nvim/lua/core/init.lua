@@ -1,4 +1,3 @@
-require('plazma.core.options')
-require('plazma.core.keymaps')
-require('plazma.core.yank_highlight')
-require('plazma.core.neovide')
+require('core.options')
+require('core.keymaps')
+require('core.yank_highlight')
