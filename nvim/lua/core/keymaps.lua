@@ -1,4 +1,4 @@
-require("core.term_toggle")
+require 'plazma.core.term_toggle'
 
 -- Set <space> as the leader key
 -- See `:help mapleader`
@@ -22,8 +22,8 @@ vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, { desc = 'Open float
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostics list' })
 
 -- Remap for going back to file explorer
-vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
+vim.keymap.set('n', '<leader>pv', vim.cmd.Ex)
 
 -- Remapping integrated terminal binding
-vim.keymap.set("t", "<C-[>", [[<C-\><C-n>]], {desc="Exit terminal mode"})
-vim.keymap.set({"n", "t"}, "<C-'>", ToggleTerminal)
+vim.keymap.set('t', '<C-[>', [[<C-\><C-n>]], { desc = 'Exit terminal mode' })
+vim.keymap.set({ 'n', 't' }, "<C-'>", ToggleTerminal)
