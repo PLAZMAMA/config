@@ -1,4 +1,7 @@
 -- remove plugin for now since I can't make the remote OpenAI compatible providers work
+-- TODO: Upgrade to 9.x.x.
+-- TODO: Make OpenAI compatible providers work
+-- TODO: Add custom prompts for function definition generation in different languages.
 return {}
 
 -- return {
