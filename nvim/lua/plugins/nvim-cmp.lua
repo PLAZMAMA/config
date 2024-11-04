@@ -3,29 +3,11 @@ return {
   'hrsh7th/nvim-cmp',
   commit = 'ae644feb7b67bf1ce4260c231d1d4300b19c6f30',
   dependencies = {
-    -- Snippet Engine & its associated nvim-cmp source
-    -- TODO: Move LuaSnip and other snippets to a sperate file.
-    -- TODO: Add a custom python snippet: `inspect(local=locals())`
-    {
-      'L3MON4D3/LuaSnip',
-      build = (function()
-        -- Build Step is needed for regex support in snippets
-        -- This step is not supported in many windows environments
-        -- Remove the below condition to re-enable on windows
-        if vim.fn.has 'win32' == 1 then
-          return
-        end
-        return 'make install_jsregexp'
-      end)(),
-    },
-    'saadparwaiz1/cmp_luasnip',
-
     -- Adds LSP completion capabilities
     'hrsh7th/cmp-nvim-lsp',
     'hrsh7th/cmp-path',
-
-    -- Adds a number of user-friendly snippets
-    'rafamadriz/friendly-snippets',
+    'L3MON4D3/LuaSnip',
+    'saadparwaiz1/cmp_luasnip',
   },
   config = function()
     -- See `:help cmp`
