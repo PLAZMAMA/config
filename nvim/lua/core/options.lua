@@ -41,10 +41,10 @@ vim.o.completeopt = 'menuone,noselect'
 vim.o.termguicolors = true
 
 -- Set tabs to 4
+-- :set noexpandtab shiftwidth=4 tabstop=4 softtabstop=4
 vim.o.expandtab = true
 vim.o.tabstop = 4
 vim.o.shiftwidth = 4
--- :set noexpandtab shiftwidth=4 tabstop=4 softtabstop=4
 
 -- Set up the match for lines longer than 80 characters
 vim.fn.matchadd('ErrorMsg', '\\%>80v.\\+')
