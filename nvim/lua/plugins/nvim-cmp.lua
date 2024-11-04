@@ -56,14 +56,14 @@ return {
       },
     }
 
-    -- The line beneath this is called `modeline`. See `:help modeline`
-    -- vim: ts=2 sts=2 sw=2 et
     local wk = require 'which-key'
     wk.add {
       {
-        { '<A-Up>', desc = 'Scroll docs up' },
-        { '<A-Down>', desc = 'Scroll docs down' },
-        { '<leader>od', desc = '[O]pen [D]ocs' },
+        { '<A-p>', desc = 'Scroll docs up' },
+        { '<A-n>', desc = 'Scroll docs down' },
+        { '<TAB>', desc = 'Accept completion' },
+        { '<C-n>', desc = 'Next completion/Snippet input place' },
+        { '<C-p>', desc = 'Previous completion/Snippet input place' },
       },
     }
   end,
