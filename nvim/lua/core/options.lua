@@ -46,8 +46,5 @@ vim.o.tabstop = 4
 vim.o.shiftwidth = 4
 -- :set noexpandtab shiftwidth=4 tabstop=4 softtabstop=4
 
--- -- Define highlight group for OverLength
--- vim.api.nvim_set_hl(0, 'OverLength', { ctermbg = 'red', ctermfg = 'white', guibg = '#592929' })
-
 -- Set up the match for lines longer than 80 characters
 vim.fn.matchadd('ErrorMsg', '\\%>80v.\\+')
