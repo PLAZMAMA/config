@@ -1,6 +1,6 @@
 -- remove plugin for now since I can't make the remote OpenAI compatible providers work
 -- TODO: Make OpenAI compatible providers work
--- TODO: Add custom prompts for function definition generation in different languages.
+-- TODO: Add custom prompts for function definition generation in different languages. (partly coming up in the next version hopefully)
 -- return {}
 
 return {
