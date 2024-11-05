@@ -59,7 +59,6 @@ return {
     vim.api.nvim_set_keymap('n', '<leader>ct', '<cmd>CodeCompanionChat Toggle<cr>', { noremap = true })
     vim.api.nvim_set_keymap('v', '<leader>ct', '<cmd>CodeCompanionChat<cr>', { noremap = true })
     vim.api.nvim_set_keymap('v', '<leader>ce', '<cmd>CodeCompanion /explain<cr>', { noremap = true, silent = true })
-    vim.api.nvim_set_keymap('v', '<leader>cc', '<cmd>CodeCompanion<cr>', { noremap = true })
     vim.api.nvim_set_keymap('n', '<leader>cc', '<cmd>CodeCompanion<cr>', { noremap = true })
     vim.api.nvim_set_keymap('v', '<leader>cc', '<cmd>CodeCompanion<cr>', { noremap = true })
   end,
