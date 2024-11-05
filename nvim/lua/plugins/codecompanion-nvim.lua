@@ -60,8 +60,8 @@ return {
     vim.api.nvim_set_keymap('v', '<leader>ct', '<cmd>CodeCompanionChat Toggle<cr>', { noremap = true, silent = true })
     vim.api.nvim_set_keymap('v', '<leader>cn', '<cmd>CodeCompanion /naming<cr>', { noremap = true, silent = true })
     vim.api.nvim_set_keymap('v', '<leader>ce', '<cmd>CodeCompanion /explain<cr>', { noremap = true, silent = true })
-    vim.api.nvim_set_keymap('v', '<leader>cc', '<cmd>CodeCompanion<cr>', { noremap = true, silent = true })
-    vim.api.nvim_set_keymap('n', '<leader>cc', '<cmd>CodeCompanion<cr>', { noremap = true, silent = true })
+    vim.api.nvim_set_keymap('v', '<leader>cc', '<cmd>CodeCompanion<cr>', { noremap = true })
+    vim.api.nvim_set_keymap('n', '<leader>cc', '<cmd>CodeCompanion<cr>', { noremap = true })
 
     -- Expand 'cc' into 'CodeCompanion' in the command line
     vim.cmd [[cab cc CodeCompanion]]
