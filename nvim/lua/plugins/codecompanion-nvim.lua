@@ -110,3 +110,26 @@ return {
 --   })
 -- end,
 -- ----------------------------------------------------------------------------
+--
+--
+-- ollama = function()
+--   return require('codecompanion.adapters').extend('ollama', {
+--     schema = {
+--       model = {
+--         default = 'qwen2.5-coder',
+--       },
+--     },
+--     env = {
+--       -- url = 'http://192.168.1.30:8080',
+--       url = 'http://localhost:11434',
+--       api_key = 'OLLAMA_API_KEY',
+--     },
+--     headers = {
+--       ['Content-Type'] = 'application/json',
+--       ['Authorization'] = 'Bearer ${api_key}',
+--     },
+--     parameters = {
+--       sync = true,
+--     },
+--   })
+-- end,
