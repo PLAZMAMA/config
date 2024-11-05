@@ -20,14 +20,14 @@ return {
   },
   config = function()
     require('codecompanion').setup {
+      display = {
+        chat = {
+          render_headers = false,
+        },
+      },
       adapters = {
         ollama = function()
           return require('codecompanion.adapters').extend('ollama', {
-            display = {
-              chat = {
-                render_headers = false,
-              },
-            },
             schema = {
               model = {
                 default = 'qwen2.5-coder',
