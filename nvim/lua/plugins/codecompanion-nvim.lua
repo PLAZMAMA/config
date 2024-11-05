@@ -34,8 +34,8 @@ return {
               },
             },
             env = {
-              -- url = 'http://192.168.1.30:8080',
-              url = 'http://localhost:11434',
+              url = 'http://192.168.1.30:8080',
+              -- url = 'http://localhost:11434',
               api_key = 'OLLAMA_API_KEY',
             },
             headers = {
