@@ -33,6 +33,7 @@ alias brew="arch --arm64 brew"
 
 # Python
 alias python='python3.12'
+alias pip='pip3.12'
 
 #################
 # Auto Completion
