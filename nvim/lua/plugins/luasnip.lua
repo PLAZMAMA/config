@@ -23,7 +23,7 @@ return {
     ------------------
 
     -- Python
-    luasnip.add_snippets('python', { s('intr', t 'inspect(local=locals())') })
+    luasnip.add_snippets('python', { s('intr', t 'interact(local=locals())') })
   end,
   dependencies = {
     -- Adds a number of VSCode-like user-friendly snippets
