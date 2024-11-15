@@ -1,5 +1,5 @@
 # Brew path export(no idea why I need it, after running my zsh config it fucked up the PATH for some reason
-export PATH="/opt/homebrew/bin:$PATH"
+export PATH="/opt/homebrew/bin:$HOME/bin:$PATH"
 
 # General config directory paths
 export XDG_CONFIG_HOME="$HOME/.config"
