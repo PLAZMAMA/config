@@ -35,7 +35,7 @@ config.enable_kitty_graphics = true
 -- config.max_fps = 120
 
 -- Change default font size
-config.font_size = 12
+config.font_size = 18
 
 -- Keybinds
 local act = wezterm.action
