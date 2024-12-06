@@ -28,6 +28,15 @@ config.colors = {
 -- Because it doesn't keep the wallpaper when going into normal fullscreen mode.
 config.native_macos_fullscreen_mode = false
 
+-- Enable kitty graphics for image viewing in Neovim.
+config.enable_kitty_graphics = true
+
+-- Change max fps
+config.max_fps = 120
+
+-- Change default font size
+config.font_size = 12
+
 -- Keybinds
 local act = wezterm.action
 
