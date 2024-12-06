@@ -5,7 +5,7 @@ local wezterm = require("wezterm")
 local config = wezterm.config_builder()
 
 -- Color scheme and apperance
-config.color_scheme = "Tokyo Night Moon"
+config.color_scheme = "Tokyo Night"
 config.window_background_opacity = 0.8
 config.disable_default_key_bindings = false
 config.hide_tab_bar_if_only_one_tab = true
