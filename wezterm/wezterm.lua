@@ -54,6 +54,7 @@ config.keys = {
 	{ key = "V", mods = "CTRL|SHIFT", action = act.PasteFrom("Clipboard") },
 	{ key = "f", mods = "ALT", action = wezterm.action.ToggleFullScreen },
 	{ key = "t", mods = "ALT", action = act.SpawnTab("CurrentPaneDomain") },
+	{ key = "[", mods = "CTRL", action = act.Nop },
 }
 
 ----------------------------------
