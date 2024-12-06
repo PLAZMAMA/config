@@ -31,8 +31,8 @@ config.native_macos_fullscreen_mode = false
 -- Enable kitty graphics for image viewing in Neovim.
 config.enable_kitty_graphics = true
 
--- Change max fps
-config.max_fps = 120
+-- Change max fps if needed to, right now it feel fine with 60 fps tbh.
+-- config.max_fps = 120
 
 -- Change default font size
 config.font_size = 12
