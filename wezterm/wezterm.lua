@@ -9,18 +9,18 @@ config.color_scheme = "Tokyo Night"
 config.window_background_opacity = 0.8
 config.disable_default_key_bindings = false
 config.hide_tab_bar_if_only_one_tab = true
-config.window_frame = {
-	active_titlebar_bg = "rgba(36, 40, 59, 0.8)",
-	inactive_titlebar_bg = "rgba(36, 40, 59, 0.)",
-}
+config.tab_bar_at_bottom = true
+config.use_fancy_tab_bar = false
+local active_tab_bar_color = "rgba(132, 1, 67, 0.7)"
 config.colors = {
 	tab_bar = {
-		active_tab = { bg_color = "rgba(132, 1, 67, 0.8)", fg_color = "white" },
+		active_tab = { bg_color = active_tab_bar_color, fg_color = "white" },
 		inactive_tab = { bg_color = "rgba(36, 40, 59, 0.)", fg_color = "white" },
-		inactive_tab_hover = { bg_color = "rgba(132, 1, 67, 0.8)", fg_color = "white" },
+		inactive_tab_hover = { bg_color = active_tab_bar_color, fg_color = "white" },
 		inactive_tab_edge = "rgba(255, 255, 255, 0)",
 		new_tab = { bg_color = "rgba(36, 40, 59, 0.)", fg_color = "white" },
-		new_tab_hover = { bg_color = "rgba(132, 1, 67, 0.8)", fg_color = "white" },
+		new_tab_hover = { bg_color = active_tab_bar_color, fg_color = "white" },
+		background = "rgba(36, 40, 59, 0.)",
 	},
 }
 
@@ -31,7 +31,7 @@ config.native_macos_fullscreen_mode = false
 -- Enable kitty graphics for image viewing in Neovim.
 config.enable_kitty_graphics = true
 
--- Change max fps if needed to, right now it feel fine with 60 fps tbh.
+-- Change max fps if needed to, right now it feel fine with 60 fps TBH.
 -- config.max_fps = 120
 
 -- Change default font size
