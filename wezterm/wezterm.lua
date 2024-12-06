@@ -70,7 +70,7 @@ local passthrough_key_binds = {
 }
 
 -- Creating complete keybindings table
-for indx, key_bind in pairs(passthrough_key_binds) do
+for _, key_bind in pairs(passthrough_key_binds) do
 	table.insert(config.keys, {
 		key = key_bind.key,
 		mods = key_bind.mods,
