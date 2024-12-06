@@ -41,6 +41,9 @@ autoload -U compinit
 compinit -u
 _comp_options+=(globdots) # Adds hidden files completion  
 
+# Set up fzf key bindings and fuzzy completion
+source <(fzf --zsh)
+
 #################
 # Directory Stack
 setopt AUTO_PUSHD           # Push the current directory visited on the stack.
