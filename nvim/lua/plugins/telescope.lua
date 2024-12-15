@@ -110,9 +110,9 @@ return {
         )
         vim.keymap.set(
             "n",
-            "<leader>ss",
+            "<leader>st",
             require("telescope.builtin").builtin,
-            { desc = "[S]earch [S]elect Telescope" }
+            { desc = "[S]earch Select [T]elescope" }
         )
         vim.keymap.set(
             "n",
