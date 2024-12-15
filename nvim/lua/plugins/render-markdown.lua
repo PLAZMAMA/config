@@ -1,11 +1,11 @@
 return {
     -- Make sure to set this up properly if you have lazy=true
-    'MeanderingProgrammer/render-markdown.nvim',
+    "MeanderingProgrammer/render-markdown.nvim",
     lazy = true,
-    version = 'v7.x.x',
-    ft = { 'markdown', 'vimwiki', 'codecompanion' },
+    version = "v7.x.x",
+    ft = { "markdown", "vimwiki", "codecompanion" },
     config = function()
-        require('render-markdown').setup({
+        require("render-markdown").setup({
             render_modes = true,
         })
     end,

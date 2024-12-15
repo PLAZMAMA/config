@@ -1,26 +1,26 @@
 -- Highlight, edit, and navigate code
 return {
-    'nvim-treesitter/nvim-treesitter',
-    build = ':TSUpdate',
-    version = '0.24.x',
+    "nvim-treesitter/nvim-treesitter",
+    build = ":TSUpdate",
+    version = "0.24.x",
     opts = {
         -- Add languages to be installed here that you want installed for treesitter
         ensure_installed = {
-            'c',
-            'cpp',
-            'go',
-            'lua',
-            'python',
-            'rust',
-            'tsx',
-            'javascript',
-            'typescript',
-            'vimdoc',
-            'vim',
-            'bash',
-            'gitcommit',
-            'markdown',
-            'markdown_inline',
+            "c",
+            "cpp",
+            "go",
+            "lua",
+            "python",
+            "rust",
+            "tsx",
+            "javascript",
+            "typescript",
+            "vimdoc",
+            "vim",
+            "bash",
+            "gitcommit",
+            "markdown",
+            "markdown_inline",
         },
         -- Autoinstall languages that are not installed. Defaults to false (but you can change for yourself!)
         auto_install = true,
@@ -35,15 +35,15 @@ return {
         incremental_selection = {
             enable = true,
             keymaps = {
-                init_selection = '<c-space>',
-                node_incremental = '<c-space>',
-                scope_incremental = '<c-s>',
-                node_decremental = '<M-space>',
+                init_selection = "<c-space>",
+                node_incremental = "<c-space>",
+                scope_incremental = "<c-s>",
+                node_decremental = "<M-space>",
             },
         },
     },
     config = function(_, opts)
-        require('nvim-treesitter.configs').setup(opts)
-        vim.treesitter.language.add('markdown', {filetype= 'vimwiki' })
-    end
+        require("nvim-treesitter.configs").setup(opts)
+        vim.treesitter.language.add("markdown", { filetype = "vimwiki" })
+    end,
 }

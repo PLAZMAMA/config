@@ -1,5 +1,5 @@
 return {
-    'tpope/vim-sleuth',
-    'tpope/vim-rhubarb',
-    'tpope/vim-fugitive',
+    "tpope/vim-sleuth",
+    "tpope/vim-rhubarb",
+    "tpope/vim-fugitive",
 }
