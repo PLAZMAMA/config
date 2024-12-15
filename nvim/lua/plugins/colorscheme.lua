@@ -4,7 +4,6 @@ return {
     'folke/tokyonight.nvim',
     version = 'v4.8.x',
     lazy = false,
-    priority = 1000,
     config = function()
       require('tokyonight').setup {
         style = 'night',
