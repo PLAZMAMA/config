@@ -21,9 +21,6 @@ vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = 'Go to next diagnos
 vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, { desc = 'Open floating diagnostic message' })
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostics list' })
 
--- Remap for going back to file explorer
-vim.keymap.set('n', '<leader>pv', vim.cmd.Ex)
-
 -- Remapping integrated terminal binding
 vim.keymap.set('t', '<C-[>', [[<C-\><C-n>]], { desc = 'Exit terminal mode' })
 vim.keymap.set({ 'n', 't' }, "<C-'>", ToggleTerminal)
