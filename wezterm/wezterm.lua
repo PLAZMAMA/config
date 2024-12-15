@@ -34,8 +34,10 @@ config.enable_kitty_graphics = true
 -- Change max fps if needed to, right now it feel fine with 60 fps TBH.
 -- config.max_fps = 120
 
--- Change default font size
-config.font_size = 18
+-- Change default font size on MacOS
+if wezterm.target_triple == "aarch64-apple-darwin" then
+	config.font_size = 18
+end
 
 -- Keybinds
 local act = wezterm.action
