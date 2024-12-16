@@ -44,4 +44,6 @@ vim.keymap.set(
 -- Remapping integrated terminal binding
 vim.keymap.set("t", "<esc>", [[<C-\><C-n>]], { desc = "Exit terminal mode" })
 vim.keymap.set({ "n", "i" }, "<C-j>", open_terminal, { desc = "Open terminal" })
-vim.keymap.set({ "n", "i" }, "<C-l>", function () open_terminal("!!") end, { desc = "Open terminal and run last command" })
+vim.keymap.set({ "n", "i" }, "<C-l>", function()
+    open_terminal("!!")
+end, { desc = "Open terminal and run last command" })
