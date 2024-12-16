@@ -43,8 +43,9 @@ local function harpoon_files()
     -- Center files in statusline
     local progress_len = 3 -- Complete guess
     local lualine_padding = 14 -- Through trial and error
-    local used_space = vim.o.columns - (#marked_files + #vim.b.harpoon_mark + progress_len + lualine_padding)
-    local padding = string.rep(" ", used_space/2, "")
+    local used_space = vim.o.columns
+        - (#marked_files + #vim.b.harpoon_mark + progress_len + lualine_padding)
+    local padding = string.rep(" ", used_space / 2, "")
     return (marked_files .. padding) or ""
 end
 
