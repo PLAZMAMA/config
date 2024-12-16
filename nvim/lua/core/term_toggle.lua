@@ -16,6 +16,7 @@ function open_terminal(command)
     cmd("startinsert")
     -- Allows caller to choose whether to run a command or not after the terminal opens
     if command ~= nil then
-        cmd(command .. "/r/n")
+        local job_id = vim.bo.channel
+        fun.chansend(job_id, { command .. "\r\n" })
     end
 end
