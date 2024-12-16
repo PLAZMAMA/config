@@ -1,39 +1,45 @@
 ---returns a harpoon icon if the current file is marked in Harpoon. Does not
 ---`require` Harpoon itself (allowing harpoon to still be lazy-loaded)
-local function updateHarpoonIndicator()
+local function update_harpoon()
+    -- Get current market files
     local harpoon = require("harpoon")
-    vim.b.harpoonMark = "" -- empty by default
     local pwd = vim.uv.cwd()
     if not pwd then
         return
     end
+
+    -- Update harpoon statusline (marks and files)
+    vim.b.harpoonMark = "" -- empty by default
     local marked_files = harpoon:list():display()
-    local current_file = vim.fn.expand("%:p")
+    local current_file = vim.api.nvim_buf_get_name(0)
     for _, file in pairs(marked_files) do
-        local abs_path = pwd .. "/" .. file
+        local abs_path = file
+        if string.sub(abs_path, 1, 1) ~= "/" then
+            abs_path = pwd .. "/" .. abs_path
+        end
         if abs_path == current_file then
             vim.b.harpoonMark = "󰛢"
         end
     end
 end
 
-local function harpoonStatusline()
+local function harpoon_mark()
     return vim.b.harpoonMark or ""
 end
 
-local harpoon_autogroup = vim.api.nvim_create_augroup("HarpoonStatusline", {clear=true})
 -- Updates the harpoon indicator when writing in the harpoon window or in general. This time not override the whole write command :)
+local harpoon_autogroup = vim.api.nvim_create_augroup("HarpoonUpdate", { clear = true })
 vim.api.nvim_create_autocmd({ "BufEnter", "BufWritePost" }, {
     group = harpoon_autogroup,
     pattern = "*",
-    callback = updateHarpoonIndicator,
+    callback = update_harpoon,
 })
 
 -- Updates the harpoon indicator when adding files to harpoon.
 vim.api.nvim_create_autocmd({ "User" }, {
     group = harpoon_autogroup,
     pattern = "HarpoonAdd",
-    callback = updateHarpoonIndicator,
+    callback = update_harpoon,
 })
 
 return {
@@ -42,7 +48,7 @@ return {
     config = function()
         require("lualine").setup({
             sections = {
-                lualine_x = { harpoonStatusline },
+                lualine_x = {harpoon_mark},
             },
         })
     end,
