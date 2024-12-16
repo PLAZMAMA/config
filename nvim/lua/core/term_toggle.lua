@@ -1,35 +1,21 @@
-local te_buf = nil
-local te_win_id = nil
+local term_buf_name = nil
+local fun = vim.fn
+local cmd = vim.api.nvim_command
 
-local v = vim
-local fun = v.fn
-local cmd = v.api.nvim_command
-local gotoid = fun.win_gotoid
-local getid = fun.win_getid
-
-local function openTerminal()
-    if fun.bufexists(te_buf) ~= 1 then
-        cmd("au TermOpen * setlocal nonumber norelativenumber signcolumn=no")
-        cmd("sp | winc J | res 10 | te")
-        te_win_id = getid()
-        te_buf = fun.bufnr("%")
-    elseif gotoid(te_win_id) ~= 1 then
-        cmd("sb " .. te_buf .. "| winc J | res 10")
-        te_win_id = getid()
+-- Opens a terminal and runs a command if given.
+function open_terminal(command)
+    -- Only creates a new terminal if one doesn't already exist.
+    -- This fits my workflow better as I like to have a terminal that shows me what I ran before.
+    if fun.bufexists(term_buf_name) ~= 1 then
+        cmd("au TermOpen * setlocal signcolumn=no")
+        cmd("te")
+        term_buf_name = fun.bufname("%")
+    elseif fun.bufexists(term_buf_name) then
+        cmd("e " .. term_buf_name)
     end
     cmd("startinsert")
-end
-
-local function hideTerminal()
-    if gotoid(te_win_id) == 1 then
-        cmd("hide")
-    end
-end
-
-function ToggleTerminal()
-    if gotoid(te_win_id) == 1 then
-        hideTerminal()
-    else
-        openTerminal()
+    -- Allows caller to choose whether to run a command or not after the terminal opens
+    if command ~= nil then
+        cmd(command .. "/r/n")
     end
 end
