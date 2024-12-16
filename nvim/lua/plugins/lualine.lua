@@ -37,8 +37,8 @@ local function harpoon_files()
     -- For the second it will be 6 + 2 = 8.
     -- and so on...
     local start_indx = 6
-    for key, value in pairs(vim.g.marked_file_names) do
-        marked_files = marked_files .. key + start_indx .. ":" .. value .. " "
+    for indx, file_name in pairs(vim.g.marked_file_names) do
+        marked_files = marked_files .. (start_indx + indx) % 10 .. ":" .. file_name .. " "
     end
     -- Center files in statusline
     local progress_len = 3 -- Complete guess
