@@ -21,43 +21,27 @@ local function harpoonStatusline()
     return vim.b.harpoonMark or ""
 end
 
+local harpoon_autogroup = vim.api.nvim_create_augroup("HarpoonStatusline", {clear=true})
 -- Updates the harpoon indicator when writing in the harpoon window or in general. This time not override the whole write command :)
 vim.api.nvim_create_autocmd({ "BufEnter", "BufWritePost" }, {
+    group = harpoon_autogroup,
     pattern = "*",
     callback = updateHarpoonIndicator,
 })
 
 -- Updates the harpoon indicator when adding files to harpoon.
 vim.api.nvim_create_autocmd({ "User" }, {
+    group = harpoon_autogroup,
     pattern = "HarpoonAdd",
     callback = updateHarpoonIndicator,
 })
 
 return {
     "nvim-lualine/lualine.nvim",
-    dependencies = { "folke/trouble.nvim", "ThePrimeagen/harpoon" },
+    dependencies = { "ThePrimeagen/harpoon" },
     config = function()
-        local trouble = require("trouble")
-        local symbols = trouble.statusline({
-            mode = "lsp_document_symbols",
-            groups = {},
-            title = false,
-            filter = { range = true },
-            -- format = '{kind_icon}{symbol.name:Normal}',
-            format = "{kind_icon}{symbol.name:Normal}",
-            -- The following line is needed to fix the background color
-            -- Set it to the lualine section you want to use
-            hl_group = "lualine_c_normal",
-        })
         require("lualine").setup({
             sections = {
-                lualine_c = {
-                    "filename",
-                    {
-                        symbols.get,
-                        cond = symbols.has,
-                    },
-                },
                 lualine_x = { harpoonStatusline },
             },
         })
