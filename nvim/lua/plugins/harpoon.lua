@@ -11,7 +11,7 @@ return {
 
         harpoon:setup()
         keymap.set(
-            { "n", "i" },
+            { "n" },
             "<leader>a",
             function()
                 harpoon:list():add()
