@@ -21,6 +21,11 @@ return {
         -- See `:help telescope` and `:help telescope.setup()`
         require("telescope").setup({
             defaults = {
+                layout_strategy = "vertical",
+                layout_config = {
+                    height = 0.95,
+                    width = 0.95,
+                },
                 mappings = {
                     i = {
                         ["<C-u>"] = false,
