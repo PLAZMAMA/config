@@ -15,10 +15,6 @@ return {
     },
     opts = {
         notify_on_error = false,
-        format_after_save = {
-            timeout_ms = 5000,
-            async = true,
-        },
         formatters_by_ft = {
             lua = { "stylua" },
             python = { "black" },
