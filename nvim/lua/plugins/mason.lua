@@ -19,21 +19,22 @@ return {
         local servers = {
             clangd = {},
             -- gopls = {},
-            pyright = {
+            basedpyright = {
                 python = {
                     autoImportCompletions = true,
                     autoSearchPaths = true,
                     diagnosticMode = "openFilesOnly",
+                    useLibraryCodeForTypes = true,
                     typeCheckingMode = "standard",
                 },
             },
-            jdtls = {},
+            -- jdtls = {},
             -- rust_analyzer = {},
-            ts_ls = {
-                settings = {
-                    npmLocation = "/opt/homebrew/bin/npm",
-                },
-            },
+            -- ts_ls = {
+            --     settings = {
+            --         npmLocation = "/opt/homebrew/bin/npm",
+            --     },
+            -- },
             -- html = { filetypes = { 'html', 'twig', 'hbs'} },
             lua_ls = {
                 settings = {
@@ -49,7 +50,7 @@ return {
 
         local formatters = {
             "stylua",
-            "black",
+            "ruff",
             "prettierd",
         }
 
