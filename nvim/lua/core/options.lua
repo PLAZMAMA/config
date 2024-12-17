@@ -47,4 +47,4 @@ vim.o.tabstop = 4
 vim.o.shiftwidth = 4
 
 -- Set up the match for lines longer than 80 characters
-vim.fn.matchadd("ErrorMsg", "\\%>90v.\\+")
+-- vim.fn.matchadd("ErrorMsg", "\\%>90v.\\+")
