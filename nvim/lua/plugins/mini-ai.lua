@@ -1,1 +1,1 @@
-return { "echasnovski/mini.ai", config = true, version = false }
+return { "echasnovski/mini.ai", enabled = false, config = true, version = false }
