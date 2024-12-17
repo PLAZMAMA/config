@@ -54,7 +54,7 @@ local function harpoon_files()
         [ 18 ] = 33,
         [ 24 ] = 40,
     }
-    local diagnostics_len = diagnostics_lengths[vim.g.diagnostics_len]
+    local diagnostics_len = diagnostics_lengths[vim.b.diagnostics_len]
     local lualine_sep_padding = 9 -- Through (a lot) of trial and error.
     local progress_len = 4 -- Measured to always be 3, doing this to simplify config below.
     local left_used_space = #marked_files
@@ -95,7 +95,7 @@ return {
                         "diagnostics",
                         fmt = function (str)
                             -- Pattern for deleting highlight groups and spaces between each diagnosic.
-                            vim.g.diagnostics_len = #string.gsub(str, " *%%#[_%w]+#", "")
+                            vim.b.diagnostics_len = #string.gsub(str, " *%%#[_%w]+#", "")
                             return str
                         end
                     }
