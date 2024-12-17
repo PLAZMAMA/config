@@ -88,6 +88,7 @@ return {
     config = function()
         require("lualine").setup({
             sections = {
+                lualine_b = { "branch", "diff" },
                 lualine_x = { harpoon_files },
                 lualine_y = {
                     { harpoon_mark },
