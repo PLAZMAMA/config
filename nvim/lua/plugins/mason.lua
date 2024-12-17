@@ -20,12 +20,10 @@ return {
             clangd = {},
             -- gopls = {},
             basedpyright = {
-                python = {
-                    autoImportCompletions = true,
+                analysis = {
                     autoSearchPaths = true,
                     diagnosticMode = "openFilesOnly",
                     useLibraryCodeForTypes = true,
-                    typeCheckingMode = "standard",
                 },
             },
             -- jdtls = {},
