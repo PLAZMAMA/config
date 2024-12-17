@@ -42,6 +42,7 @@ local function harpoon_files()
     end
     -- Center files in statusline
     -- Appreantly the diagnostics length is the following:
+    -- 0 -> 4
     -- 6 -> 16 (8)
     -- 12 -> 25 (11)
     -- 18 -> 33 (13)
@@ -49,6 +50,7 @@ local function harpoon_files()
     -- I can't find a mathmatical pattern in the above,
     -- so I'm statically assigning the lengths.
     local diagnostics_lengths = {
+        [ 0 ] = 4,
         [ 6 ] = 16,
         [ 12 ] = 25,
         [ 18 ] = 33,
