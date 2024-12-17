@@ -27,7 +27,7 @@ return {
             mapping = cmp.mapping.preset.insert({
                 ["<A-p>"] = cmp.mapping.scroll_docs(-4),
                 ["<A-n>"] = cmp.mapping.scroll_docs(4),
-                ["<Tab>"] = cmp.mapping.confirm({
+                ["<C-y>"] = cmp.mapping.confirm({
                     behavior = cmp.ConfirmBehavior.Replace,
                     select = true,
                 }),
