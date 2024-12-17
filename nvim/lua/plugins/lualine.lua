@@ -41,18 +41,33 @@ local function harpoon_files()
         marked_files = marked_files .. (start_indx + indx) % 10 .. ":" .. file_name .. " "
     end
     -- Center files in statusline
-    local progress_len = 3 -- Complete guess
-    local lualine_padding = 14 -- Through trial and error
-    local used_left_space = #marked_files
+    -- Appreantly the diagnostics length is the following:
+    -- 6 -> 16 (8)
+    -- 12 -> 25 (11)
+    -- 18 -> 33 (13)
+    -- 24 -> 40 (14)
+    -- I can't find a mathmatical pattern in the above,
+    -- so I'm statically assigning the lengths.
+    local diagnostics_lengths = {
+        [ 6 ] = 16,
+        [ 12 ] = 25,
+        [ 18 ] = 33,
+        [ 24 ] = 40,
+    }
+    local diagnostics_len = diagnostics_lengths[vim.g.diagnostics_len]
+    local lualine_sep_padding = 9 -- Through (a lot) of trial and error.
+    local progress_len = 4 -- Measured to always be 3, doing this to simplify config below.
+    local left_used_space = #marked_files
         + #vim.b.harpoon_mark
+        + diagnostics_len
         + progress_len
-        + lualine_padding
-    local free_space = vim.o.columns - used_left_space
+        + lualine_sep_padding
+    local free_space = vim.o.columns - left_used_space
     local padding = string.rep(" ", free_space / 2, "")
     return (marked_files .. padding) or ""
 end
 
--- Updates the harpoon indicator when writing in the harpoon window or in general. This time not override the whole write command :)
+-- Updates the harpoon indicator when writing in the harpoon window or in general.
 local harpoon_autogroup = vim.api.nvim_create_augroup("HarpoonUpdate", { clear = true })
 vim.api.nvim_create_autocmd({ "BufEnter", "BufWritePost" }, {
     group = harpoon_autogroup,
@@ -74,7 +89,17 @@ return {
         require("lualine").setup({
             sections = {
                 lualine_x = { harpoon_files },
-                lualine_y = { harpoon_mark },
+                lualine_y = {
+                    { harpoon_mark },
+                    {
+                        "diagnostics",
+                        fmt = function (str)
+                            -- Pattern for deleting highlight groups and spaces between each diagnosic.
+                            vim.g.diagnostics_len = #string.gsub(str, " *%%#[_%w]+#", "")
+                            return str
+                        end
+                    }
+                },
                 lualine_z = { "progress" },
             },
         })
