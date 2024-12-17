@@ -2,6 +2,7 @@
 return {
     "L3MON4D3/LuaSnip",
     version = "v2.x.x",
+    event = "InsertEnter",
     build = function()
         -- Build Step is needed for regex support in snippets
         -- This step is not supported in many windows environments
