@@ -18,7 +18,6 @@ return {
         --  define the property 'filetypes' to the map in question.
         local servers = {
             clangd = {},
-            -- gopls = {},
             basedpyright = {
                 analysis = {
                     autoSearchPaths = true,
@@ -26,8 +25,6 @@ return {
                     useLibraryCodeForTypes = true,
                 },
             },
-            -- jdtls = {},
-            -- rust_analyzer = {},
             -- ts_ls = {
             --     settings = {
             --         npmLocation = "/opt/homebrew/bin/npm",
