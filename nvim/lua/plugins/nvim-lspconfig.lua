@@ -131,6 +131,5 @@ return {
                 require("blink.cmp").get_lsp_capabilities(config.capabilities)
             lspconfig[server].setup(config)
         end
-        print("LSPCONFIG WAS SETUP")
     end,
 }
