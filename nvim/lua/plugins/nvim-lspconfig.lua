@@ -3,7 +3,7 @@ return {
     "neovim/nvim-lspconfig",
     version = "v1.0.x",
     dependencies = {
-        "williamboman/mason.nvim",
+        -- "williamboman/mason.nvim",
         -- Useful status updates for LSP
         -- NOTE: `opts = {}` is the same as calling `require('fidget').setup({})`
         { "j-hui/fidget.nvim", opts = {} },
@@ -39,7 +39,7 @@ return {
             },
         },
     },
-    config = function(_, opts)
+    config = function()
         --  This function gets run when an LSP connects to a particular buffer.
         vim.api.nvim_create_autocmd("LspAttach", {
             group = vim.api.nvim_create_augroup("lsp-attach", { clear = true }),
@@ -123,13 +123,5 @@ return {
                 })
             end,
         })
-
-        local lspconfig = require("lspconfig")
-        for server, config in pairs(opts.servers) do
-            -- blink.cmp supports additional completion capabilities, so broadcast that to servers
-            config.capabilities =
-                require("blink.cmp").get_lsp_capabilities(config.capabilities)
-            lspconfig[server].setup(config)
-        end
     end,
 }
