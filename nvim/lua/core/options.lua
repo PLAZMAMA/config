@@ -46,5 +46,8 @@ vim.o.expandtab = true
 vim.o.tabstop = 4
 vim.o.shiftwidth = 4
 
+-- Disable "--Insert--" at the command space because statusline already shows the mode, so its redundant.
+vim.opt.showmode = false
+
 -- Set up the match for lines longer than 80 characters
 -- vim.fn.matchadd("ErrorMsg", "\\%>90v.\\+")
