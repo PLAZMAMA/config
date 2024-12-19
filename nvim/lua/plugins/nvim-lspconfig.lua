@@ -11,9 +11,36 @@ return {
         -- Additional lua configuration, makes nvim stuff amazing!
         "folke/lazydev.nvim",
     },
-    config = function()
+    opts = {
+        servers = {
+            clangd = {},
+            basedpyright = {
+                analysis = {
+                    autoSearchPaths = true,
+                    diagnosticMode = "openFilesOnly",
+                    useLibraryCodeForTypes = true,
+                },
+            },
+            -- ts_ls = {
+            --     settings = {
+            --         npmLocation = "/opt/homebrew/bin/npm",
+            --     },
+            -- },
+            -- html = { filetypes = { 'html', 'twig', 'hbs'} },
+            lua_ls = {
+                settings = {
+                    Lua = {
+                        callSnippet = "Replace",
+                        telemetry = { enable = false },
+                        -- NOTE: toggle below to ignore Lua_LS's noisy `missing-fields` warnings
+                        diagnostics = { disable = { "missing-fields" } },
+                    },
+                },
+            },
+        },
+    },
+    config = function(_, opts)
         --  This function gets run when an LSP connects to a particular buffer.
-
         vim.api.nvim_create_autocmd("LspAttach", {
             group = vim.api.nvim_create_augroup("lsp-attach", { clear = true }),
             callback = function(event)
@@ -85,10 +112,7 @@ return {
                 })
 
                 vim.api.nvim_create_autocmd("LspDetach", {
-                    group = vim.api.nvim_create_augroup(
-                        "lsp-detach",
-                        { clear = true }
-                    ),
+                    group = vim.api.nvim_create_augroup("lsp-detach", { clear = true }),
                     callback = function(event2)
                         vim.lsp.buf.clear_references()
                         vim.api.nvim_clear_autocmds({
@@ -99,5 +123,14 @@ return {
                 })
             end,
         })
+
+        local lspconfig = require("lspconfig")
+        for server, config in pairs(opts.servers) do
+            -- blink.cmp supports additional completion capabilities, so broadcast that to servers
+            config.capabilities =
+                require("blink.cmp").get_lsp_capabilities(config.capabilities)
+            lspconfig[server].setup(config)
+        end
+        print("LSPCONFIG WAS SETUP")
     end,
 }
