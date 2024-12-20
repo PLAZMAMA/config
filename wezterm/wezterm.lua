@@ -39,6 +39,7 @@ if wezterm.target_triple == "aarch64-apple-darwin" then
 	config.font_size = 18
 end
 
+----------------------------------
 -- Keybinds
 local act = wezterm.action
 
