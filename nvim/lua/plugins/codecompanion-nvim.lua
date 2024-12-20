@@ -46,6 +46,7 @@ return {
             "<cmd>CodeCompanion<cr>",
             mode = { "n", "v" },
             noremap = true,
+            desc = "Launch [C]ode [C]ompanion"
         },
     },
     opts = {
