@@ -50,11 +50,11 @@ local function harpoon_files()
     -- I can't find a mathmatical pattern in the above,
     -- so I'm statically assigning the lengths.
     local diagnostics_lengths = {
-        [ 0 ] = 4,
-        [ 6 ] = 16,
-        [ 12 ] = 25,
-        [ 18 ] = 33,
-        [ 24 ] = 40,
+        [0] = 4,
+        [6] = 16,
+        [12] = 25,
+        [18] = 33,
+        [24] = 40,
     }
     local diagnostics_len = diagnostics_lengths[vim.b.diagnostics_len]
     local lualine_sep_padding = 9 -- Through (a lot) of trial and error.
@@ -88,7 +88,7 @@ return {
     "nvim-lualine/lualine.nvim",
     dependencies = { "ThePrimeagen/harpoon" },
     config = function()
-        require("lualine").setup({
+        require("lualine").setup {
             sections = {
                 lualine_b = { "branch", "diff" },
                 lualine_x = { harpoon_files },
@@ -96,15 +96,15 @@ return {
                     { harpoon_mark },
                     {
                         "diagnostics",
-                        fmt = function (str)
+                        fmt = function(str)
                             -- Pattern for deleting highlight groups and spaces between each diagnosic.
                             vim.b.diagnostics_len = #string.gsub(str, " *%%#[_%w]+#", "")
                             return str
-                        end
-                    }
+                        end,
+                    },
                 },
                 lualine_z = { "progress" },
             },
-        })
+        }
     end,
 }

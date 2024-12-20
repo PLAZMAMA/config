@@ -5,7 +5,7 @@ return {
         version = "v4.8.x",
         lazy = false,
         config = function()
-            require("tokyonight").setup({
+            require("tokyonight").setup {
                 style = "night",
                 transparent = true, -- Enable this to disable setting the background color
                 styles = {
@@ -23,7 +23,7 @@ return {
                     hl.TreesitterContext = { bg = colors.none }
                     hl["@constructor.tsx"] = { link = "@tag.tsx" } -- Solution to JSX problem found in GitHub discussions, if I ever use it, cool!
                 end,
-            })
+            }
             require("tokyonight").load()
         end,
     },

@@ -72,7 +72,7 @@ return {
                 return require("codecompanion.adapters").extend("copilot", {
                     model = {
                         default = "claude-3.5-sonnet",
-                    }
+                    },
                 })
             end,
         },

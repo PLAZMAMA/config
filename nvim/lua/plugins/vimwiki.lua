@@ -16,10 +16,10 @@ return {
         vim.g.vimwiki_ext2syntax = {
             [".md"] = "markdown",
         }
-        vim.filetype.add({
+        vim.filetype.add {
             extension = {
                 wiki = "markdown",
             },
-        })
+        }
     end,
 }

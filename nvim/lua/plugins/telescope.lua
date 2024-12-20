@@ -152,17 +152,17 @@ return {
         {
             "<leader>s/",
             function()
-                require("telescope.builtin").live_grep({
+                require("telescope.builtin").live_grep {
                     grep_open_files = true,
                     prompt_title = "Live Grep in Open Files",
-                })
+                }
             end,
             desc = "[S]earch [/] in Open Files",
         },
     },
     config = function()
         -- See `:help telescope` and `:help telescope.setup()`
-        require("telescope").setup({
+        require("telescope").setup {
             defaults = {
                 layout_strategy = "vertical",
                 layout_config = {
@@ -176,7 +176,7 @@ return {
                     },
                 },
             },
-        })
+        }
 
         -- Enable telescope fzf native, if installed
         pcall(require("telescope").load_extension, "fzf")
@@ -213,9 +213,9 @@ return {
         local function live_grep_git_root()
             local git_root = find_git_root()
             if git_root then
-                require("telescope.builtin").live_grep({
+                require("telescope.builtin").live_grep {
                     search_dirs = { git_root },
-                })
+                }
             end
         end
 

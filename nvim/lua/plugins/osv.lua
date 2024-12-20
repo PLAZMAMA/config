@@ -4,7 +4,7 @@ return {
         {
             "<leader>dl",
             function()
-                require("osv").launch({ port = 8086 })
+                require("osv").launch { port = 8086 }
             end,
             desc = "Lua(nvim) [D]ebug Server [L]aunch",
         },

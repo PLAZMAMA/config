@@ -5,8 +5,8 @@ return {
     version = "v7.x.x",
     ft = { "markdown", "vimwiki", "codecompanion" },
     config = function()
-        require("render-markdown").setup({
+        require("render-markdown").setup {
             render_modes = true,
-        })
+        }
     end,
 }

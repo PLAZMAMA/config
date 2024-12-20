@@ -26,15 +26,15 @@ return {
         local servers = require("lazy.core.config").plugins["nvim-lspconfig"].opts.servers
         local ensure_installed = vim.tbl_keys(servers or {})
         vim.list_extend(ensure_installed, formatters)
-        require("mason-tool-installer").setup({
+        require("mason-tool-installer").setup {
             ensure_installed = ensure_installed,
-        })
+        }
 
         -- blink.cmp supports additional completion capabilities, so broadcast that to servers
         local capabilities = require("blink.cmp").get_lsp_capabilities()
 
         -- Ensure the servers above are installed
-        require("mason-lspconfig").setup({
+        require("mason-lspconfig").setup {
             handlers = {
                 function(server_name)
                     local server = servers[server_name] or {}
@@ -51,6 +51,6 @@ return {
                     require("lspconfig")[server_name].setup(server)
                 end,
             },
-        })
+        }
     end,
 }
