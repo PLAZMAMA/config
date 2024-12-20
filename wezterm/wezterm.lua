@@ -71,6 +71,11 @@ local passthrough_key_binds = {
 	{ key = "0", mods = "CTRL" },
 	{ key = "/", mods = "CTRL" },
 	{ key = "m", mods = "CTRL" },
+	{ key = "h", mods = "ALT" },
+	{ key = "j", mods = "ALT" },
+	{ key = "k", mods = "ALT" },
+	{ key = "l", mods = "ALT" },
+	
 }
 
 -- Creating complete keybindings table
