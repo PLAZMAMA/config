@@ -103,7 +103,7 @@ return {
                         end,
                     },
                 },
-                lualine_z = { "progress" },
+                lualine_z = { "location"}, --, "progress" },
             },
         }
     end,
