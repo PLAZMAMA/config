@@ -1,6 +1,6 @@
 return {
     "rcarriga/nvim-dap-ui",
-    dependencies = { "nvim-neotest/nvim-nio" },
+    dependencies = {"nvim-dap", "nvim-neotest/nvim-nio" },
     keys = {
         {
             "<leader>de",
