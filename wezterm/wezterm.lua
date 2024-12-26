@@ -57,9 +57,6 @@ config.keys = {
 	{ key = "t", mods = "ALT", action = act.SpawnTab("CurrentPaneDomain") },
 	{ key = "C", mods = "CTRL|SHIFT", action = act.CopyTo("Clipboard") },
 	{ key = "V", mods = "CTRL|SHIFT", action = act.PasteFrom("Clipboard") },
-	{ key = "[", mods = "CTRL", action = act.Nop }, -- Disabled this exist of vim to force myself to use ESC
-	{ key = "UpArrow", mods = "", action = act.Nop }, -- Disabled this inside vim to force myself to use <C-p> in autocomplete.
-	{ key = "DownArrow", mods = "", action = act.Nop }, -- Disabled this inside vim to force myself to use <C-n> in autocomplete.
 }
 
 -- Creating passthrough key binds
