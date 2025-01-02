@@ -23,6 +23,9 @@ vim.o.breakindent = true
 -- Save undo history
 vim.o.undofile = true
 
+-- Makes jump list a stack(aka doesn't eliminate repeated jumps)
+vim.o.jumpoptions = "stack"
+
 -- Case-insensitive searching UNLESS \C or capital in search
 vim.o.ignorecase = true
 vim.o.smartcase = true
