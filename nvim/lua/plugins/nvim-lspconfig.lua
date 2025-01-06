@@ -44,13 +44,7 @@ return {
                 },
             },
             ruff = {
-                init_options = {
-                    settings = {
-                        lint = {
-                            enable = false
-                        }
-                    },
-                },
+                autostart = false,
             },
         },
     },
