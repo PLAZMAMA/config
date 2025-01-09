@@ -21,3 +21,6 @@ export VISUAL="nvim"
 export CUDA_DOCKER_ARCH=6.1
 export PATH="/usr/local/cuda/bin:/opt/nvim/:$PATH"
 export LD_LIBRARY_PATH="/usr/local/cuda/lib64"
+
+# Lua
+export PATH="~/.luarocks/bin:$PATH"
