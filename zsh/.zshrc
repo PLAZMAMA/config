@@ -75,6 +75,10 @@ zstyle ':vcs_info:git*' actionformats '%F{14}⏱ %*%f'
 zstyle ':vcs_info:git*' unstagedstr '*'
 zstyle ':vcs_info:git*' stagedstr '+'
 
+##############
+# Lua settings
+eval $(luarocks path --no-bin)
+
 # This enables %u and %c (unstaged/staged changes) to work,
 # but can be slow on large repos
 zstyle ':vcs_info:*:*' check-for-changes true
