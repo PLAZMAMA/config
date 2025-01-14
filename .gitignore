@@ -3,6 +3,5 @@
 
 cache/
 local/
-nvim/lazy-lock.json
 zsh/.zcompdump
 zsh/.zsh_history
