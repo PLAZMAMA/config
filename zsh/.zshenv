@@ -24,8 +24,3 @@ export LD_LIBRARY_PATH="/usr/local/cuda/lib64"
 
 # Lua
 export PATH="~/.luarocks/bin:$PATH"
-
-# Use brew Clang on Mac
-if [[ "$OSTYPE" == "darwin"* ]]; then
-    export PATH="/opt/homebrew/Cellar/llvm/19.1.7/bin:$PATH"
-fi
