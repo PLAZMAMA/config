@@ -54,3 +54,5 @@ vim.opt.showmode = false
 
 -- Set up the match for lines longer than 80 characters
 -- vim.fn.matchadd("ErrorMsg", "\\%>90v.\\+")
+
+vim.o.diffopt = "internal,filler,closeoff,linematch:60"
