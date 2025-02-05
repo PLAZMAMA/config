@@ -72,7 +72,6 @@ local passthrough_key_binds = {
 	{ key = "j", mods = "ALT" },
 	{ key = "k", mods = "ALT" },
 	{ key = "l", mods = "ALT" },
-	
 }
 
 -- Creating complete keybindings table
