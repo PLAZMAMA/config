@@ -31,6 +31,9 @@ alias wiki='cd $HOME/Documents/plazmama.github.io/'
 alias brewup='brew update && brew upgrade && brew cleanup'
 alias brew="arch --arm64 brew"
 
+# Python
+alias ur='uv run'
+
 #################
 # Auto Completion
 autoload -U compinit
