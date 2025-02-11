@@ -119,6 +119,5 @@ zle -N zle-line-init
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-###############################
-# Sourcing Virtual Enviornments
+# Sourcing Enviornment Files
 source "$HOME/.config/local/share/../bin/env"
