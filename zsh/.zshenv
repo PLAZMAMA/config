@@ -23,7 +23,7 @@ export PATH="/usr/local/cuda/bin:/opt/nvim/:$PATH"
 export LD_LIBRARY_PATH="/usr/local/cuda/lib64"
 
 # Lua
-export PATH="~/.luarocks/bin:$PATH"
+export PATH="$HOME/.luarocks/bin:$PATH"
 
 # Default Mac clang don't work on Tinygrad
 export PATH="/opt/homebrew/Cellar/llvm/19.1.7/bin:$PATH"
