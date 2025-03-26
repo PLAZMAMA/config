@@ -46,7 +46,7 @@ return {
             "<cmd>CodeCompanion<cr>",
             mode = { "n", "v" },
             noremap = true,
-            desc = "Launch [C]ode [C]ompanion"
+            desc = "Launch [C]ode [C]ompanion",
         },
     },
     opts = {
@@ -55,6 +55,20 @@ return {
         display = {
             chat = {
                 render_headers = true,
+            },
+            diff = {
+                enabled = true,
+                close_chat_at = 240,
+                layout = "vertical",
+                opts = {
+                    "internal",
+                    "filler",
+                    "closeoff",
+                    "algorithm:patience",
+                    "followwrap",
+                    "linematch:120",
+                },
+                provider = "default",
             },
         },
         strategies = {
