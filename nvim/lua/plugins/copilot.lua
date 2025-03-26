@@ -36,5 +36,8 @@ return {
             desc = "Dismiss copilot suggestion",
         },
     },
-    opts = { suggestion = { auto_trigger = true } },
+    opts = {
+        suggestion = { auto_trigger = true },
+        copilot_model = "gpt-4o-copilot"
+    },
 }
