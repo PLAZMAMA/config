@@ -55,6 +55,7 @@ return {
         display = {
             chat = {
                 render_headers = true,
+                show_settings = true,
             },
             diff = {
                 enabled = true,
@@ -73,7 +74,7 @@ return {
         },
         strategies = {
             chat = {
-                adapter = "copilot",
+                adapter = "gemini",
             },
             inline = {
                 adapter = "copilot",
@@ -85,11 +86,29 @@ return {
         adapters = {
             copilot = function()
                 return require("codecompanion.adapters").extend("copilot", {
-                    model = {
-                        default = "claude-3.5-sonnet",
+                    schema = {
+                        model = {
+                            default = "claude-3.7-sonnet",
+                        },
+                    },
+                    num_ctx = {
+                        default = 32000,
                     },
                 })
             end,
+            gemini = function()
+                return require("codecompanion.adapters").extend("gemini", {
+                    schema = {
+                        model = {
+                            default = "gemini-2.5-pro-exp-03-25",
+                        },
+                    },
+                    env = {
+                        api_key = "GEMINI_API_KEY",
+                    },
+                })
+            end,
+            opts = {},
         },
     },
 }
