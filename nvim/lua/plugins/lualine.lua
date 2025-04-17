@@ -2,31 +2,38 @@
 local function update_harpoon()
     -- Get current market files
     local harpoon = require("harpoon")
-    local pwd = vim.uv.cwd()
-    if not pwd then
-        return
-    end
 
     -- Update harpoon statusline (marks and files)
     local marked_files = harpoon:list():display()
-    local current_file = vim.api.nvim_buf_get_name(0)
     local marked_file_names = {}
     for _, file in pairs(marked_files) do
-        table.insert(marked_file_names, vim.fs.basename(file))
+        table.insert(marked_file_names, file)
     end
     vim.g.marked_file_names = marked_file_names
 end
 
 local function harpoon_files()
+    local cwd = vim.uv.cwd()
+    if not cwd then return end
+    local current_file = vim.api.nvim_buf_get_name(0)
     local marked_files = ""
     -- Harpoon's corresponding Keybinding number. Ex: <C-7>, <C-8>, ...
     -- Hence the base number is 6 which the index is added to get the keybind number.
     -- The first keybind number is 7 which 6(base number) + 1(index) = 7.
-    -- The second keybind number is 8 which 6(base number) + 2*(index) = 8.
+    -- The second keybind number is 8 which 6(base number) + 2(index) = 8.
     -- and so on...
     local base_number = 6
     for indx, file_name in pairs(vim.g.marked_file_names) do
-        marked_files = marked_files .. (base_number + indx) % 10 .. ":" .. file_name .. " "
+        local abs_path = file_name
+        if string.sub(abs_path, 1, 1) ~= "/" then
+            abs_path = cwd .. "/" .. abs_path
+        end
+        local file_highlight = "%#lualine_c_inactive#"
+        if abs_path == current_file then
+            file_highlight = "%#lualine_c_normal#"
+        else
+        end
+        marked_files = marked_files .. file_highlight .. (base_number + indx) % 10 .. ":" .. vim.fs.basename(file_name) .. " "
     end
     return marked_files or ""
 end
