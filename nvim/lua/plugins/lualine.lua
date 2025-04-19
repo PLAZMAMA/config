@@ -25,7 +25,7 @@ local function harpoon_files()
     local base_number = 6
     for indx, file_name in pairs(vim.g.marked_file_names) do
         local abs_path = file_name
-        if string.sub(abs_path, 1, 1) ~= "/" then
+        if abs_path:sub(1, 1) ~= "/" then
             abs_path = cwd .. "/" .. abs_path
         end
         local file_highlight = "%#lualine_c_inactive#"
