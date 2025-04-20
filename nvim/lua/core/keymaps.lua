@@ -18,18 +18,6 @@ vim.keymap.set("n", "j", "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = tr
 -- Diagnostic keymaps
 vim.keymap.set(
     "n",
-    "[d",
-    vim.diagnostic.goto_prev,
-    { desc = "Go to previous diagnostic message" }
-)
-vim.keymap.set(
-    "n",
-    "]d",
-    vim.diagnostic.goto_next,
-    { desc = "Go to next diagnostic message" }
-)
-vim.keymap.set(
-    "n",
     "<leader>e",
     vim.diagnostic.open_float,
     { desc = "Open floating diagnostic message" }
@@ -42,6 +30,9 @@ vim.keymap.set(
 )
 
 -- Remapping integrated terminal binding
+vim.keymap.set("t", "<C-6>", function()
+    vim.api.nvim_cmd({ cmd = "e", args = { "#" } }, {})
+end, { desc = "Go to previous file" })
 vim.keymap.set("t", "<esc>", [[<C-\><C-n>]], { desc = "Exit terminal mode" })
 vim.keymap.set({ "n", "i" }, "<C-j>", term.open_terminal, { desc = "Open terminal" })
 vim.keymap.set({ "n", "i" }, "<C-l>", function()
