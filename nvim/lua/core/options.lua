@@ -56,3 +56,6 @@ vim.opt.showmode = false
 -- vim.fn.matchadd("ErrorMsg", "\\%>90v.\\+")
 
 vim.o.diffopt = "internal,filler,closeoff,linematch:60"
+
+-- Setup diagnostic popup when jumping between them
+vim.diagnostic.config({ jump = { float = true }})
