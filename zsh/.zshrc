@@ -1,3 +1,20 @@
+# Cuda architecture and compiler config
+export CUDA_DOCKER_ARCH=6.1
+export PATH="/usr/local/cuda/bin:/opt/nvim/:$PATH"
+export LD_LIBRARY_PATH="/usr/local/cuda/lib64"
+
+# Lua
+export PATH="$HOME/.luarocks/bin:$PATH"
+
+# Default Mac clang don't work on Tinygrad
+export PATH="/opt/homebrew/Cellar/llvm/19.1.7/bin:$PATH"
+
+export NVM_DIR="$HOME/.config/nvm"
+
+# Brew path export, brew doctor says I need this.
+export PATH="/opt/homebrew/bin:/opt/homebrew/sbin:$HOME/bin:/Users/maorcohen/Library/Python/3.9/bin:$PATH"
+
+
 #########
 # Aliases
 
@@ -122,28 +139,3 @@ zle -N zle-line-init
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-# Sourcing Enviornment Files
-source "$HOME/.config/local/share/../bin/env"
-
-# General config directory paths
-export XDG_CONFIG_HOME="$HOME/.config"
-export XDG_DATA_HOME="$XDG_CONFIG_HOME/local/share"
-export XDG_CACHE_HOME="$XDG_CONFIG_HOME/cache"
-
-# Default editor
-export EDITOR="nvim"
-export VISUAL="nvim"
-
-# Cuda architecture and compiler config
-export CUDA_DOCKER_ARCH=6.1
-export PATH="/usr/local/cuda/bin:/opt/nvim/:$PATH"
-export LD_LIBRARY_PATH="/usr/local/cuda/lib64"
-
-# Lua
-export PATH="$HOME/.luarocks/bin:$PATH"
-
-# Default Mac clang don't work on Tinygrad
-export PATH="/opt/homebrew/Cellar/llvm/19.1.7/bin:$PATH"
-
-# Brew path export, brew doctor says I need this.
-export PATH="/opt/homebrew/bin:/opt/homebrew/sbin:$HOME/bin:/Users/maorcohen/Library/Python/3.9/bin:$PATH"
