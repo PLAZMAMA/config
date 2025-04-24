@@ -1,6 +1,5 @@
 return {
     "saghen/blink.cmp",
-    dependencies = "rafamadriz/friendly-snippets",
     event = "InsertEnter",
     version = "v1.*",
     opts = {
@@ -14,7 +13,7 @@ return {
         -- default list of enabled providers defined so that you can extend it
         -- elsewhere in your config, without redefining it, via `opts_extend`
         sources = {
-            default = { "lsp", "path", "snippets", "buffer", "codecompanion" },
+            default = { "lsp", "path", "buffer", "codecompanion" },
             providers = {
                 codecompanion = {
                     name = "CodeCompanion",
