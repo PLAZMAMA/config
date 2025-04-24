@@ -14,7 +14,8 @@ end
 
 local function harpoon_files()
     local cwd = vim.uv.cwd()
-    if not cwd then return end
+    if not cwd then return "" end
+    if vim.g.marked_file_names[1] == "" then return "" end
     local current_file = vim.api.nvim_buf_get_name(0)
     local marked_files = ""
     -- Harpoon's corresponding Keybinding number. Ex: <C-7>, <C-8>, ...
@@ -22,7 +23,8 @@ local function harpoon_files()
     -- The first keybind number is 7 which 6(base number) + 1(index) = 7.
     -- The second keybind number is 8 which 6(base number) + 2(index) = 8.
     -- and so on...
-    local base_number = 6
+    local base_num = 6
+    local keymap_num = base_num
     for indx, file_name in pairs(vim.g.marked_file_names) do
         local abs_path = file_name
         if abs_path:sub(1, 1) ~= "/" then
@@ -33,7 +35,8 @@ local function harpoon_files()
             file_highlight = "%#lualine_c_normal#"
         else
         end
-        marked_files = marked_files .. file_highlight .. (base_number + indx) % 10 .. ":" .. vim.fs.basename(file_name) .. " "
+        keymap_num = (base_num + indx) % 10
+        marked_files = marked_files .. file_highlight .. keymap_num .. ":" .. vim.fs.basename(file_name) .. " "
     end
     return marked_files or ""
 end
