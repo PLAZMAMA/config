@@ -30,7 +30,6 @@ return {
     },
     opts = {
         suggestion = { auto_trigger = true },
-        copilot_model = "gpt-4o-copilot",
         filetypes = {
             gitcommit = true,
         },
