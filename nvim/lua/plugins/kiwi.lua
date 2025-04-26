@@ -1,5 +1,5 @@
 return {
-    "serenevoid/kiwi.nvim",
+    "PLAZMAMA/kiwi.nvim",
     lazy = true,
     opts = {
         {
