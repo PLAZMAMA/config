@@ -3,7 +3,6 @@ return {
     "lewis6991/gitsigns.nvim",
     version = "v0.9.x",
     opts = {
-        -- See `:help gitsigns.txt`
         signs = {
             add = { text = "+" },
             change = { text = "~" },
@@ -11,6 +10,7 @@ return {
             topdelete = { text = "‾" },
             changedelete = { text = "~" },
         },
+        current_line_blame = true,
         on_attach = function(bufnr)
             local gs = package.loaded.gitsigns
 
