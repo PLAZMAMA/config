@@ -1,0 +1,18 @@
+{
+    "cursor.cpp.enablePartialAccepts": true,
+    "cursor.composer.collapsePaneInputBoxPills": true,
+    "editor.lineNumbers": "relative",
+    "workbench.navigationControl.enabled": false,
+    "window.titleBarStyle": "native",
+    "window.density.editorTabHeight": "compact",
+    "workbench.colorTheme": "doom-one",
+    "cursor.terminal.usePreviewBox": true,
+    "terminal.integrated.defaultProfile.linux": "zsh",
+    "terminal.integrated.defaultProfile.osx": "zsh",
+    "cursor.cpp.disabledLanguages": [
+        "markdown",
+        "plaintext",
+        "latex"
+    ],
+    "window.zoomLevel": 0.4
+}
