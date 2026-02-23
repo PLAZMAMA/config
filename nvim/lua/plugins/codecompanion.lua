@@ -1,7 +1,7 @@
 -- TODO: Add custom prompts for function definition generation in different languages. (partly coming up in the next version hopefully)
 return {
     "olimorris/codecompanion.nvim",
-    enabled = true,
+    enabled = false,
     version = "*",
     dependencies = {
         "nvim-lua/plenary.nvim",

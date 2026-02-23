@@ -13,14 +13,7 @@ return {
         -- default list of enabled providers defined so that you can extend it
         -- elsewhere in your config, without redefining it, via `opts_extend`
         sources = {
-            default = { "lsp", "path", "buffer", "codecompanion" },
-            providers = {
-                codecompanion = {
-                    name = "CodeCompanion",
-                    module = "codecompanion.providers.completion.blink",
-                    enabled = true,
-                },
-            },
+            default = { "lsp", "path", "buffer" },
         },
 
         -- experimental signature help support
