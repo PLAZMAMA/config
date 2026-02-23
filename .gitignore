@@ -16,3 +16,4 @@ cache/
 local/
 zsh/.zcompdump
 zsh/.zsh_history
+zsh/.zhistory
