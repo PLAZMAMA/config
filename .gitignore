@@ -1,6 +1,17 @@
  TODO: ignore everything besides zsh, nvim, and wezterm folders
  TODO: additionally, keep zsh and nvim specific ignores
 
+
+
+# Ignore everything
+/*
+
+#unignore specific folders
+!/nvim/
+!/wezterm/
+!/zsh/
+
+# Reignore specific files and folders in the unignored folders
 cache/
 local/
 zsh/.zcompdump
