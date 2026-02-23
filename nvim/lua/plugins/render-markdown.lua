@@ -3,7 +3,7 @@ return {
     "MeanderingProgrammer/render-markdown.nvim",
     lazy = true,
     version = "v7.x.x",
-    ft = { "markdown", "vimwiki", "codecompanion" },
+    ft = { "markdown", "vimwiki" },
     config = function()
         require("render-markdown").setup {
             render_modes = true,
