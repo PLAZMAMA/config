@@ -1,3 +1,6 @@
+# Putting this cursor acp config here cuz zshenv DOESN'T GET SOURCED!!!!!!
+export CURSOR_ACP_TOOL_LOOP_MAX_REPEAT=10
+
 # Cuda architecture and compiler config
 export CUDA_DOCKER_ARCH=6.1
 export PATH="/usr/local/cuda/bin:/opt/nvim/:$PATH"
@@ -13,6 +16,9 @@ export NVM_DIR="$HOME/.config/nvm"
 
 # Brew path export, brew doctor says I need this.
 export PATH="/opt/homebrew/bin:/opt/homebrew/sbin:$HOME/bin:/Users/maorcohen/Library/Python/3.9/bin:$PATH"
+
+# Cursor agent path
+export PATH="/Users/maorcohen/.local/bin:$PATH"
 
 
 #########
@@ -105,7 +111,6 @@ zstyle ':vcs_info:*:*' check-for-changes true
 
 PROMPT='⎇ ${vcs_info_msg_0_} %~%(?.%F{82}=>.%F{124}=>)%f '
 
-##########
 # Vim mode
 bindkey -v
 export KEYTIMEOUT=1 # Makes the switch between modes quicker
@@ -133,9 +138,9 @@ zle-line-init() {
 zle -N zle-keymap-select
 zle -N zle-line-init
 
-#####
-# NVM
-
+# Setup NVM
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
+# Setup Vulkan enviornment
+source ~/VulkanSDK/1.4.341.1/setup-env.sh

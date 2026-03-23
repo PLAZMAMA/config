@@ -14,3 +14,5 @@ export SAVEHIST=10000                   # Maximum events in history file
 export EDITOR="nvim"
 export VISUAL="nvim"
 
+# Opencode configs
+export CURSOR_ACP_TOOL_LOOP_MAX_REPEAT=10
