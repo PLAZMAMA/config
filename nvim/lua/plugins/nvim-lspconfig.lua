@@ -1,7 +1,7 @@
 return {
     -- LSP Configuration & Plugins
     "neovim/nvim-lspconfig",
-    version = "v1.0.x",
+    version = "v2.x.x",
     dependencies = {
         -- "williamboman/mason.nvim",
         -- Useful status updates for LSP
@@ -63,30 +63,15 @@ return {
                     )
                 end
 
-                local tel_bltn = require("telescope.builtin")
-                map("gd", tel_bltn.lsp_definitions, "[G]oto [D]efinition")
-                map("gr", tel_bltn.lsp_references, "[G]oto [R]eferences")
-                map("gI", tel_bltn.lsp_implementations, "[G]oto [I]mplementation")
-                map("<leader>D", tel_bltn.lsp_type_definitions, "Type [D]efinition")
-                map(
-                    "<leader>ss",
-                    tel_bltn.lsp_document_symbols,
-                    "[S]earch Document [S]ymbols"
-                )
-                map(
-                    "<leader>ws",
-                    tel_bltn.lsp_dynamic_workspace_symbols,
-                    "[W]orkspace [S]ymbols"
-                )
+                local fzf = require("fzf-lua")
+                map("gd", fzf.lsp_definitions, "[G]oto [D]efinition")
+                map("gr", fzf.lsp_references, "[G]oto [R]eferences")
+                map("gI", fzf.lsp_implementations, "[G]oto [I]mplementation")
+                map("<leader>D", fzf.lsp_typedefs, "Type [D]efinition")
+                map("<leader>ss", fzf.lsp_document_symbols, "[S]earch Document [S]ymbols")
+                map("<leader>ws", fzf.lsp_live_workspace_symbols, "[W]orkspace [S]ymbols")
                 map("<leader>rn", vim.lsp.buf.rename, "[R]e[n]ame")
-                map(
-                    "<leader>ca",
-                    vim.lsp.buf.code_action,
-                    "[C]ode [A]ction",
-                    { "n", "x" }
-                )
                 map("gD", vim.lsp.buf.declaration, "[G]oto [D]eclaration")
-                map("K", vim.lsp.buf.hover, "Hover Documentation")
                 map("<C-k>", vim.lsp.buf.signature_help, "Signature Documentation")
 
                 -- Makes sure the lsp has the highlight feature needed for the two autocommands below.

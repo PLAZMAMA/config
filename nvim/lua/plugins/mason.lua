@@ -1,56 +1,65 @@
 return {
-    "williamboman/mason.nvim",
-    version = "1.x.x",
+    "mason-org/mason.nvim",
+    version = "2.x.x",
     dependencies = {
         "nvim-lspconfig",
-        "williamboman/mason-lspconfig.nvim",
-        "WhoIsSethDaniel/mason-tool-installer.nvim",
+        "mason-org/mason-lspconfig.nvim",
     },
     config = function()
         require("mason").setup()
-        -- Enable the following language servers
-        --  Feel free to add/remove any LSPs that you want here. They will automatically be installed.
-        --
-        --  Add any additional override configuration in the following tables. They will be passed to
-        --  the `settings` field of the server config. You must look up that documentation yourself.
-        --
-        --  If you want to override the default filetypes that your language server will attach to you can
-        --  define the property 'filetypes' to the map in question.
-        local formatters = {
-            "stylua",
-            "ruff",
-            "prettierd",
-        }
 
-        -- Insure formatted are installed
+        -- Formatters/linters to install via mason (not LSPs)
+        local formatters = { "stylua", "ruff", "prettierd" }
+
+        -- LSP server configs are declared in nvim-lspconfig.lua opts.servers
         local servers = require("lazy.core.config").plugins["nvim-lspconfig"].opts.servers
-        local ensure_installed = vim.tbl_keys(servers or {})
-        vim.list_extend(ensure_installed, formatters)
-        require("mason-tool-installer").setup {
-            ensure_installed = ensure_installed,
-        }
+        local server_names = vim.tbl_keys(servers or {})
 
         -- blink.cmp supports additional completion capabilities, so broadcast that to servers
         local capabilities = require("blink.cmp").get_lsp_capabilities()
 
-        -- Ensure the servers above are installed
-        require("mason-lspconfig").setup {
-            handlers = {
-                function(server_name)
-                    local server = servers[server_name] or {}
+        -- Apply per-server config via vim.lsp.config() before enabling
+        for server_name, server_opts in pairs(servers) do
+            local merged = vim.tbl_deep_extend("force", {}, server_opts, {
+                capabilities = vim.tbl_deep_extend(
+                    "force",
+                    {},
+                    capabilities,
+                    server_opts.capabilities or {}
+                ),
+            })
+            vim.lsp.config(server_name, merged)
+        end
 
-                    -- This handles overriding only values explicitly passed
-                    -- by the server configuration above. Useful when disabling
-                    -- certain features of an LSP (for example, turning off formatting for ts_ls)
-                    server.capabilities = vim.tbl_deep_extend(
-                        "force",
-                        {},
-                        capabilities,
-                        server.capabilities or {}
-                    )
-                    require("lspconfig")[server_name].setup(server)
-                end,
-            },
+        -- Monkey-patch mason-registry.refresh to guard against nil updated_registries
+        -- (upstream bug: https://github.com/mason-org/mason-lspconfig.nvim commit 6b2ba82)
+        local registry = require("mason-registry")
+        local orig_refresh = registry.refresh
+        registry.refresh = function(cb, ...)
+            return orig_refresh(function(success, updated_registries)
+                if cb then
+                    cb(success, updated_registries or {})
+                end
+            end, ...)
+        end
+
+        -- Ensure LSP servers are installed; automatic_enable will call vim.lsp.enable()
+        require("mason-lspconfig").setup {
+            ensure_installed = server_names,
+            automatic_enable = true,
         }
+
+        -- Restore original refresh after setup
+        registry.refresh = orig_refresh
+
+        -- Install formatters/linters directly via mason registry
+        registry.refresh(function()
+            for _, name in ipairs(formatters) do
+                local ok, pkg = pcall(registry.get_package, name)
+                if ok and not pkg:is_installed() then
+                    pkg:install()
+                end
+            end
+        end)
     end,
 }
