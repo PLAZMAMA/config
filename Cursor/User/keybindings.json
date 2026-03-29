@@ -336,5 +336,10 @@
         "key": "escape",
         "command": "-editor.action.cancelGPT4WithCmdDelete",
         "when": "hadGPT4InlineCompletionRunning"
+    },
+    {
+        "key": "ctrl+alt+s",
+        "command": "workbench.action.toggleUnifiedSidebarFromKeyboard",
+        "when": "cursor.agentIdeUnification.enabled == true && !isAuxiliaryWindowFocusedContext"
     }
 ]
