@@ -1,0 +1,19 @@
+
+"title": {
+  "model": "nvidia/moonshotai/kimi-k2-instruct-0905"
+},
+"summary": {
+  "model": "nvidia/moonshotai/kimi-k2-instruct-0905"
+},
+"compaction": {
+  "model": "nvidia/moonshotai/kimi-k2-instruct-0905"
+},
+"plan": {
+  "model": "nvidia/z-ai/glm5"
+},
+"build": {
+  "model": "nvidia/z-ai/glm5"
+},
+"explore": {
+  "model": "nvidia/moonshotai/kimi-k2-instruct-0905"
+}
