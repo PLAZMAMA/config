@@ -10,6 +10,7 @@
 !/nvim/
 !/wezterm/
 !/zsh/
+!/opencode/
 
 # Reignore specific files and folders in the unignored folders
 cache/
