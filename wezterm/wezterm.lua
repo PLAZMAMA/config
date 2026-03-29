@@ -60,29 +60,33 @@ config.keys = {
 	{ key = "V", mods = "CTRL|SHIFT", action = act.PasteFrom("Clipboard") },
 }
 
--- Creating passthrough key binds
--- Table for specifing which keybindings to passthrough
-local passthrough_key_binds = {
-	{ key = "7", mods = "CTRL" },
-	{ key = "8", mods = "CTRL" },
-	{ key = "9", mods = "CTRL" },
-	{ key = "0", mods = "CTRL" },
-	{ key = "/", mods = "CTRL" },
-	{ key = "m", mods = "CTRL" },
-	{ key = "h", mods = "ALT" },
-	{ key = "j", mods = "ALT" },
-	{ key = "k", mods = "ALT" },
-	{ key = "l", mods = "ALT" },
-}
+-- -- Creating passthrough key binds
+-- -- Table for specifing which keybindings to passthrough
+-- local passthrough_key_binds = {
+-- 	{ key = "7", mods = "CTRL" },
+-- 	{ key = "8", mods = "CTRL" },
+-- 	{ key = "9", mods = "CTRL" },
+-- 	{ key = "0", mods = "CTRL" },
+-- 	{ key = "/", mods = "CTRL" },
+-- 	{ key = "m", mods = "CTRL" },
+-- 	{ key = "h", mods = "ALT" },
+-- 	{ key = "j", mods = "ALT" },
+-- 	{ key = "k", mods = "ALT" },
+-- 	{ key = "l", mods = "ALT" },
+-- }
+--
+-- -- Creating complete keybindings table
+-- for _, key_bind in pairs(passthrough_key_binds) do
+-- 	table.insert(config.keys, {
+-- 		key = key_bind.key,
+-- 		mods = key_bind.mods,
+-- 		action = wezterm.action.SendKey({ key = key_bind.key, mods = key_bind.mods }),
+-- 	})
+-- end
+--
 
--- Creating complete keybindings table
-for _, key_bind in pairs(passthrough_key_binds) do
-	table.insert(config.keys, {
-		key = key_bind.key,
-		mods = key_bind.mods,
-		action = wezterm.action.SendKey({ key = key_bind.key, mods = key_bind.mods }),
-	})
-end
+-- Remove warnings about missing symbols
+config.warn_about_missing_glyphs = false
 
 -- Returns the configuration to wezterm
 return config
