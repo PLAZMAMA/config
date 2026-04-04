@@ -46,22 +46,22 @@
   },
   "agent": {
     "title": {
-      "model": "nvidia/moonshotai/kimi-k2-instruct-0905"
+      "model": "openai/gpt-5.4-mini"
     },
     "summary": {
-      "model": "nvidia/moonshotai/kimi-k2-instruct-0905"
+      "model": "openai/gpt-5.4-mini"
     },
     "compaction": {
-      "model": "nvidia/moonshotai/kimi-k2-instruct-0905"
+      "model": "openai/gpt-5.4-mini"
     },
     "plan": {
       "model": "openai/gpt-5.4"
     },
     "build": {
-      "model": "openai/gpt-5.3-codex"
+      "model": "openai/gpt-5.3-codex-spark"
     },
     "explore": {
-      "model": "nvidia/moonshotai/kimi-k2-instruct-0905"
+      "model": "openai/gpt-5.4-mini"
     }
   }
 }
