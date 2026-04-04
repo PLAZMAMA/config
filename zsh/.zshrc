@@ -143,4 +143,7 @@ zle -N zle-line-init
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # Setup Vulkan enviornment
-source ~/VulkanSDK/1.4.341.1/setup-env.sh
+
+if [ -d "$HOME/VulkanSDK/1.4.341.1" ]; then
+    source ~/VulkanSDK/1.4.341.1/setup-env.sh
+fi
