@@ -1,5 +1,6 @@
 {
   "$schema": "https://opencode.ai/config.json",
+  "theme": "system",
   "permission": {
     "bash": {
       "*": "ask",
@@ -27,9 +28,9 @@
       "nvidia-smi *": "allow",
       "glob *": "allow",
       "fetch *": "allow",
-      "curl *": "allow",
+      "curl *": "allow"
     },
-    "edit": "allow"
+    "edit": "ask"
   },
   "compaction": {
     "auto": false,
