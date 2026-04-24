@@ -47,16 +47,16 @@
   },
   "agent": {
     "title": {
-      "model": "nvidia/moonshotai/kimi-k2-instruct-0905"
+      "model": "nvidia/google/gemma-4-31b-it"
     },
     "summary": {
-      "model": "nvidia/moonshotai/kimi-k2-instruct-0905"
+      "model": "nvidia/google/gemma-4-31b-it"
     },
     "compaction": {
       "model": "nvidia/moonshotai/kimi-k2.5"
     },
     "plan": {
-      "model": "nvidia/z-ai/glm5"
+      "model": "nvidia/z-ai/glm-5.1"
     },
     "build": {
       "model": "openai/gpt-5.3-codex"
