@@ -43,9 +43,8 @@ return {
                     },
                 },
             },
-            ruff = {
-                autostart = false,
-            },
+            ruff = { autostart = false, },
+            ocamllsp = {},
         },
     },
     config = function()

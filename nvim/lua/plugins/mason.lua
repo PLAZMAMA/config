@@ -44,8 +44,9 @@ return {
         end
 
         -- Ensure LSP servers are installed; automatic_enable will call vim.lsp.enable()
+        local mason_servers = vim.tbl_filter(function(name) return name ~= "ocamllsp" end, server_names)
         require("mason-lspconfig").setup {
-            ensure_installed = server_names,
+            ensure_installed = mason_servers,
             automatic_enable = true,
         }
 
