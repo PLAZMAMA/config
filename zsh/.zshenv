@@ -16,3 +16,6 @@ export VISUAL="nvim"
 
 # Opencode configs
 export CURSOR_ACP_TOOL_LOOP_MAX_REPEAT=10
+
+# uv
+export PATH="/Users/maorcohen/.config/local/share/../bin:$PATH"
