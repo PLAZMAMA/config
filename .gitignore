@@ -11,6 +11,7 @@
 !/wezterm/
 !/zsh/
 !/opencode/
+!/zed/
 
 # Reignore specific files and folders in the unignored folders
 cache/
