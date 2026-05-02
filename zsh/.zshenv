@@ -19,3 +19,6 @@ export CURSOR_ACP_TOOL_LOOP_MAX_REPEAT=10
 
 # uv
 export PATH="/Users/maorcohen/.config/local/share/../bin:$PATH"
+
+# clangd (installed by Zed)
+export PATH="$HOME/.local/share/zed/languages/clangd/clangd_22.1.0/bin:$PATH"
