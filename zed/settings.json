@@ -1,0 +1,161 @@
+{
+  "cli_default_open_behavior": "existing_window",
+  "language_models": {
+    "openai_compatible": {
+      "nvidia": {
+        "api_url": "https://integrate.api.nvidia.com/v1",
+        "available_models": [
+          {
+            "name": "z-ai/glm-5.1",
+            "max_tokens": 200000,
+            "max_output_tokens": 32000,
+            "max_completion_tokens": 200000,
+            "capabilities": {
+              "tools": true,
+              "images": true,
+              "parallel_tool_calls": true,
+              "prompt_cache_key": false,
+              "chat_completions": true,
+              "interleaved_reasoning": false
+            }
+          }
+        ]
+      }
+    },
+    "ollama": {
+      "api_url": "https://integrate.api.nvidia.com/v1"
+    }
+  },
+  "agent_servers": {
+    "claude-acp": {
+      "type": "registry"
+    }
+  },
+  "agent": {
+    "tool_permissions": {
+      "tools": {
+        "terminal": {
+          "default": "allow",
+          "always_allow": [
+            {
+              "pattern": "^cat\\s+\\~/\\.config/zed/settings\\.json(\\s|$)"
+            },
+            {
+              "pattern": "^cd\\s+\\~/\\.local/share/fonts(\\s|$)"
+            },
+            {
+              "pattern": "^cd\\s+/home/plazma/src/PufferLib(\\s|$)"
+            },
+            {
+              "pattern": "^clangd\\b"
+            },
+            {
+              "pattern": "^head\\b"
+            },
+            {
+              "pattern": "^fc\\-cache\\b"
+            },
+            {
+              "pattern": "^tail\\b"
+            },
+            {
+              "pattern": "^which\\s+clangd(\\s|$)"
+            },
+            {
+              "pattern": "^find\\s+/usr(\\s|$)"
+            },
+            {
+              "pattern": "^grep\\s+clangd(\\s|$)"
+            },
+            {
+              "pattern": "^pip\\s+show(\\s|$)"
+            },
+            {
+              "pattern": "^ls\\s+/home/plazma/\\.local/share/zed/languages/(\\s|$)"
+            },
+            {
+              "pattern": "^ls\\s+/home/plazma/\\.vscode/extensions/(\\s|$)"
+            },
+            {
+              "pattern": "^find\\s+/home/plazma(\\s|$)"
+            },
+            {
+              "pattern": "^fc\\-list\\b"
+            },
+            {
+              "pattern": "^grep\\b"
+            }
+          ]
+        }
+      }
+    },
+    "sidebar_side": "right",
+    "default_model": {
+      "provider": "nvidia",
+      "model": "z-ai/glm-5.1",
+      "enable_thinking": false
+    },
+    "dock": "right",
+    "favorite_models": [
+      {
+        "provider": "nvidia",
+        "model": "z-ai/glm-5.1",
+        "enable_thinking": false
+      }
+    ],
+    "model_parameters": []
+  },
+  "icon_theme": "Zed (Default)",
+  "theme": {
+    "mode": "dark",
+    "light": "One Light",
+    "dark": "Tokyo Night"
+  },
+  "outline_panel": {
+    "dock": "left"
+  },
+  "debugger": {
+    "dock": "bottom"
+  },
+  "collaboration_panel": {
+    "dock": "left"
+  },
+  "project_panel": {
+    "dock": "left"
+  },
+  "git_panel": {
+    "dock": "left"
+  },
+  "vim_mode": true,
+  "vim": {},
+  "which_key": {
+    "enabled": true
+  },
+  "relative_line_numbers": "enabled",
+  "tab_bar": {
+    "show": true
+  },
+  "scrollbar": {
+    "show": "never"
+  },
+  "tabs": {
+    "show_diagnostics": "errors"
+  },
+  "indent_guides": {
+    "enabled": true,
+    "coloring": "indent_aware"
+  },
+  "git": {
+    "inline_blame": {
+      "enabled": true
+    }
+  },
+  "terminal": {
+    "font_family": "MesloLGS Nerd Font Mono",
+    "font_fallbacks": ["Noto Color Emoji", "Symbola"]
+  },
+  "font_family": "MesloLGS Nerd Font",
+  "font_fallbacks": ["Noto Color Emoji", "Symbola"],
+  "ui_font_fallbacks": ["MesloLGS Nerd Font", "Noto Color Emoji", "Symbola"],
+  "buffer_font_fallbacks": ["MesloLGS Nerd Font", "Noto Color Emoji", "Symbola"]
+}
