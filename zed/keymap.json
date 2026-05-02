@@ -4,5 +4,23 @@
     "bindings": {
       "ctrl-j": "workspace::ToggleBottomDock"
     }
+  },
+  {
+    "context": "Workspace",
+    "bindings": {
+      "ctrl-l": ["workspace::SendKeystrokes", "ctrl-` ! ! enter"]
+    }
+  },
+  {
+    "context": "VimControl && !menu",
+    "bindings": {
+      "ctrl-l": ["workspace::SendKeystrokes", "ctrl-` ! ! enter"]
+    }
+  },
+  {
+    "context": "vim_mode == insert",
+    "bindings": {
+      "ctrl-l": ["workspace::SendKeystrokes", "ctrl-` ! ! enter"]
+    }
   }
 ]
