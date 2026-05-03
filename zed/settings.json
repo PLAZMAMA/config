@@ -1,4 +1,7 @@
 {
+  "gutter": {
+    "line_numbers": true
+  },
   "cli_default_open_behavior": "existing_window",
   "language_models": {
     "openai_compatible": {
@@ -118,7 +121,8 @@
     "dock": "bottom"
   },
   "collaboration_panel": {
-    "dock": "left"
+    "dock": "left",
+    "button": false
   },
   "project_panel": {
     "dock": "left"
