@@ -20,7 +20,7 @@
   },
   {
     "bindings": {
-      "ctrl-shift-c": null
+      "ctrl-shift-c": "terminal::Copy"
     }
   },
   {
