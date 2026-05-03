@@ -8,7 +8,19 @@
   {
     "context": "Workspace",
     "bindings": {
-      "ctrl-l": ["workspace::SendKeystrokes", "ctrl-` ! ! enter"]
+      "ctrl-l": ["workspace::SendKeystrokes", "ctrl-` ! ! enter"],
+      "ctrl-shift-c": null
+    }
+  },
+  {
+    "context": "Dock",
+    "bindings": {
+      "ctrl-shift-c": null
+    }
+  },
+  {
+    "bindings": {
+      "ctrl-shift-c": null
     }
   },
   {
