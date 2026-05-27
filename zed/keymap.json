@@ -9,6 +9,7 @@
     "context": "Workspace",
     "bindings": {
       "ctrl-l": ["workspace::SendKeystrokes", "ctrl-` ! ! enter"],
+      "alt-n": "agent::NewThread",
       "ctrl-shift-c": null
     }
   },
@@ -20,19 +21,29 @@
   },
   {
     "bindings": {
-      "ctrl-shift-c": "terminal::Copy"
+      "ctrl-shift-c": "terminal::Copy",
+      "alt-c": "workspace::ToggleRightDock",
+      "alt-t": "multi_workspace::ToggleWorkspaceSidebar"
     }
   },
   {
     "context": "VimControl && !menu",
     "bindings": {
-      "ctrl-l": ["workspace::SendKeystrokes", "ctrl-` ! ! enter"]
+      "ctrl-l": ["workspace::SendKeystrokes", "ctrl-` ! ! enter"],
+      "ctrl-b": "workspace::ToggleLeftDock"
     }
   },
   {
     "context": "vim_mode == insert",
     "bindings": {
-      "ctrl-l": ["workspace::SendKeystrokes", "ctrl-` ! ! enter"]
+      "ctrl-l": ["workspace::SendKeystrokes", "ctrl-` ! ! enter"],
+      "alt-r": null
     }
-  }
+  },
+  {
+    "context": "",
+    "bindings": {
+      "alt-r": "projects::OpenRecent"
+    }
+  },
 ]
