@@ -6,6 +6,17 @@ export CUDA_DOCKER_ARCH=6.1
 export PATH="/usr/local/cuda/bin:/opt/nvim/:$PATH"
 export LD_LIBRARY_PATH="/usr/local/cuda/lib64"
 
+# Exporting cuda 12.2 since the system install of cuda doesn't work with my gtx1080
+export CUDA_HOME="$HOME/.local/cuda-12.2"
+export PATH="$CUDA_HOME/bin:$PATH"
+export LD_LIBRARY_PATH="$CUDA_HOME/lib64:$LD_LIBRARY_PATH"
+export NVCC_ARCH=sm_61
+# nvcc still uses g++ as host (CUDA 12.2 headers have noexcept-spec mismatches that clang rejects)
+export NVCC_PREPEND_FLAGS="-ccbin g++ -include=$HOME/.cache/cuda_glibc_compat.h -Xcompiler=-U_GNU_SOURCE -Xcompiler=-D_DEFAULT_SOURCE -Xcompiler=-D_XOPEN_SOURCE=700 -Xcompiler=-D_POSIX_C_SOURCE=200809L"
+export CC=clang
+export CXX=clang++
+
+
 # Lua
 export PATH="$HOME/.luarocks/bin:$PATH"
 
@@ -56,12 +67,13 @@ alias brew='arch --arm64 brew'
 
 # Python
 alias ur='uv run'
+alias act='source .venv/bin/activate'
 
 #################
 # Auto Completion
 autoload -U compinit
 compinit -u
-_comp_options+=(globdots) # Adds hidden files completion  
+_comp_options+=(globdots) # Adds hidden files completion
 
 # Set up fzf key bindings and fuzzy completion
 source <(fzf --zsh)
@@ -147,26 +159,3 @@ zle -N zle-line-init
 if [ -d "$HOME/VulkanSDK/1.4.341.1" ]; then
     source ~/VulkanSDK/1.4.341.1/setup-env.sh
 fi
-
-# >>> forge initialize >>>
-# !! Contents within this block are managed by 'forge zsh setup' !!
-# !! Do not edit manually - changes will be overwritten !!
-
-# Add required zsh plugins if not already present
-if [[ ! " ${plugins[@]} " =~ " zsh-autosuggestions " ]]; then
-    plugins+=(zsh-autosuggestions)
-fi
-if [[ ! " ${plugins[@]} " =~ " zsh-syntax-highlighting " ]]; then
-    plugins+=(zsh-syntax-highlighting)
-fi
-
-# Load forge shell plugin (commands, completions, keybindings) if not already loaded
-if [[ -z "$_FORGE_PLUGIN_LOADED" ]]; then
-    eval "$(forge zsh plugin)"
-fi
-
-# Load forge shell theme (prompt with AI context) if not already loaded
-if [[ -z "$_FORGE_THEME_LOADED" ]]; then
-    eval "$(forge zsh theme)"
-fi
-# <<< forge initialize <<<
