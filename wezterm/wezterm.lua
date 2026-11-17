@@ -36,7 +36,6 @@ config.enable_kitty_graphics = true
 
 config.font = wezterm.font_with_fallback({
 	-- { family = "MesloLGS Nerd Font", weight = "Regular", stretch = "Normal", style = "Normal" },
-	{ family = "MesloLGS NF", weight = "Regular", stretch = "Normal", style = "Normal" },
 	{ family = "MesloLGS Nerd Font Mono", weight = "Regular", stretch = "Normal", style = "Normal" },
 	"Noto Color Emoji",
 })
